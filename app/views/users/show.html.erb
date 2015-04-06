@@ -8,20 +8,17 @@
         <div class="col-sm-8 blog-main">
 
           <div class="blog-post">
-            <h2 class="blog-post-title">Sample blog post</h2>
-            <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-             <% @user.posts.each do |post| %>
-  <%= post.title %><br>
-    <%= post.body %>
-<% end %>
+          	<% @user.posts.each do |post| %>
+            <h2 class="blog-post-title"><%= post.title %></h2>
+            <p class="blog-post-meta"><%= post.created_at %> by <a href="#"><%= @user.name %></a></p>
+    		<%= post.body %>
+    		<%= link_to 'Edit', edit_post_path(post) %> |
+			<%= link_to 'Back', posts_path %>
+			<% end %>
 
 <p id="notice"><%= notice %></p>
 
 
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
 </div>
 
         <nav>
