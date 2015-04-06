@@ -10,6 +10,10 @@
           <div class="blog-post">
             <h2 class="blog-post-title">Sample blog post</h2>
             <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+             <% @user.posts.each do |post| %>
+  <%= post.title %><br>
+    <%= post.body %>
+<% end %>
 
 <p id="notice"><%= notice %></p>
 
