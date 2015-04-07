@@ -1,3 +1,3 @@
 class Post < ActiveRecord::Base
-	belongs_to :user, inverse_of: :posts
+	belongs_to :blog
 end

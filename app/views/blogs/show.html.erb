@@ -1,5 +1,5 @@
       <div class="blog-header">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
+        <h1 class="blog-title"><%= @blog.blog_name %></h1>
         <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
       </div>
 
@@ -8,7 +8,7 @@
         <div class="col-sm-8 blog-main">
 
           <div class="blog-post">
-          	<% @user.posts.each do |post| %>
+          	<% @blog.posts.each do |post| %>
             <h2 class="blog-post-title"><%= post.title %></h2>
             <p class="blog-post-meta"><%= post.created_at %> by <a href="#"><%= @user.name %></a></p>
     		<%= post.body %>
@@ -34,14 +34,17 @@
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
             <p>
+
+              <% @blog.user do |user| %>
   <strong>Name:</strong>
-  <%= @user.name %>
+  <%= user.name %>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @user.email %>
+  <%= user.email %>
 </p>
+<% end %>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
           </div>
           <div class="sidebar-module">
@@ -72,3 +75,4 @@
         </div><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->
+

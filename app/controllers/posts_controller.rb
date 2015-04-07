@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = current_user.posts.find_by_id(params[:id])
+    @post = Post.find_by_id(params[:id])
   end
 
 

@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <%= f.fields_for :blog do |q| %>
+    <%= q.label :blog_name %><br>
+    <%= q.text_field :blog_name %>
+<% end -%>
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
