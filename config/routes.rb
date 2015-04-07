@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
+get 'users/:id/posts' => 'users#show', :as => :user_posts
+
 
   resources :posts
 
