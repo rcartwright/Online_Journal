@@ -11,9 +11,9 @@
 
 
             <h2 class="blog-post-title"><%= @post.title %></h2>
-            <p class="blog-post-meta"><%= @post.created_at %> by <a href="#"><%= @user.name %></a></p>
+            <p class="blog-post-meta"><%= @post.created_at %> by <a href="#">RAC</a></p>
     		<%= @post.body %>
-    		<%= link_to 'Edit', edit_post_path(post) %> |
+    		<%= link_to 'Edit', edit_post_path(@post) %> |
 			<%= link_to 'Back', posts_path %>
 
 
@@ -36,12 +36,12 @@
             <h4>About</h4>
             <p>
   <strong>Name:</strong>
-  <%= @user.name %>
+
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @user.email %>
+
 </p>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
           </div>
