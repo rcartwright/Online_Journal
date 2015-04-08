@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :blogs
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-get 'users/:id/posts' => 'users#show', :as => :user_posts
+get 'blogs/:id/posts' => 'blogs#show', :as => :blog_posts
+get 'blogs/:id/posts/:id' => 'posts#show', :as => :blog_post
+get 'blogs/:id/posts/:id/edit' => 'posts#edit', :as => :edit_blog_post
 
+  resources :blogs
 
   resources :posts
 
