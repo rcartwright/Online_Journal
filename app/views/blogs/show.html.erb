@@ -12,7 +12,7 @@
           	<% @blog.posts.each do |post| %>
 
             <h2 class="blog-post-title"><%= link_to post.title, blog_post_path(post) %></h2>
-            <p class="blog-post-meta"><%= post.created_at %> by <a href="#"></a></p>
+            <p class="blog-post-meta"><%= post.created_at %> by <a href="#"><%= @user.name %></a></p>
     		<%= post.body %>
     		<%= link_to 'Edit', edit_post_path(post) %> |
 			<%= link_to 'Back', posts_path %>
@@ -38,16 +38,16 @@
             <h4>About</h4>
             <p>
 
-              <% @blog.user do |user| %>
+
   <strong>Name:</strong>
-  <%= user.name %>
+  <%= @user.name %>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= user.email %>
+  <%= @user.email %>
 </p>
-<% end %>
+
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
           </div>
           <div class="sidebar-module">

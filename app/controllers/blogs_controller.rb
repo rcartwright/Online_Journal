@@ -12,7 +12,7 @@ class BlogsController < ApplicationController
   def show
      @blog = Blog.find(params[:id])
      @posts = @blog.posts
-     @blog.user = @user
+    @user = @blog.user
   end
 
   # GET /blogs/new
