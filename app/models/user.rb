@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
     before_save { |user| user.email = email.downcase }
     before_save :create_remember_token
 
-    has_one :blog
+    belongs_to :blog
     has_many :posts
     accepts_nested_attributes_for :blog
     validates :name, presence: true, length: { maximum: 50 }
