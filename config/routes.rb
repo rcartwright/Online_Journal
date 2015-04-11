@@ -5,10 +5,6 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-get 'blogs/:id/posts' => 'blogs#show', :as => :blog_posts
-get 'blogs/:id/posts/:id' => 'posts#show', :as => :blog_post
-get 'blogs/:id/posts/:id/edit' => 'posts#edit', :as => :edit_blog_post
-
   resources :blogs
 
   resources :posts
@@ -20,6 +16,10 @@ get 'blogs/:id/posts/:id/edit' => 'posts#edit', :as => :edit_blog_post
 
   # You can have the root of your site routed with "root"
    root 'users#index'
+
+get ':id' => 'blogs#show', :as => :blog_index
+get ':id/posts/:id' => 'posts#show', :as => :blog_post
+get ':id/posts/:id/edit' => 'posts#edit', :as => :edit_blog_post
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
