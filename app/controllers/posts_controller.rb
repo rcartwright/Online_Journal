@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  protect_from_forgery :secret => 'secret_number',
+                       :except => [:show]
 
   # GET /posts
   # GET /posts.json
@@ -16,7 +17,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @blog = @post.blog
-    @blog.user = @user
+    @user = @blog.user
   end
 
 
