@@ -11,7 +11,7 @@
           <div class="blog-post">
           	<% @blog.posts.each do |post| %>
 
-            <h2 class="blog-post-title"><%= link_to post.title, blog_post_path(post) %></h2>
+            <h2 class="blog-post-title"><%= link_to post.title, post_path(post) %></h2>
             <p class="blog-post-meta"><%= post.created_at %> by <a href="#"><%= @user.name %></a></p>
     		<%= post.body %>
     		<%= link_to 'Edit', edit_post_path(post) %> |
