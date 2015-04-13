@@ -12,15 +12,13 @@
       <div class="container">
         <nav class="blog-nav">
           <a class="blog-nav-item active" href="#">Home</a>
-          <a class="blog-nav-item" href="#">New features</a>
-          <a class="blog-nav-item" href="#">Press</a>
-          <a class="blog-nav-item" href="#">New hires</a>
           <a class="blog-nav-item" href="#">About</a>
+          <a class="blog-nav-item" href="#">Contact</a>
 
            <% if signed_in? %>
-          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+          <%= link_to "Log out", logout_path, method: "delete" %>
           <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+          <%= link_to "Log in", login_path %>
         <% end %>
 
 

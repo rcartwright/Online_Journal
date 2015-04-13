@@ -1,18 +1,23 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_filter :signed_in_user
-  before_filter :correct_user,   only: :destroy
+  protect_from_forgery :secret => 'secret_number',
+                       :except => [:show]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+
+     @user = User.find(params[:user_id])
+     @posts = Post.find(params[:id])
+
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = current_user.posts.find_by_id(params[:id])
+    @post = Post.find(params[:id])
+    @blog = @post.blog
+    @user = @blog.user
   end
 
 
@@ -22,6 +27,7 @@ class PostsController < ApplicationController
 
 def new
   @post = current_user.posts.build if signed_in?
+  @user = @post.blog
 end
 
   # POST /posts
@@ -32,7 +38,7 @@ end
       flash[:success] = "post created!"
       redirect_to root_url
     else
-      render user_path
+      render blog_path
     end
 
   end
@@ -74,6 +80,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :blog_id)
     end
 end

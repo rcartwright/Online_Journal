@@ -8,13 +8,13 @@
         <div class="col-sm-8 blog-main">
 
           <div class="blog-post">
-          	<% @user.posts.each do |post| %>
-            <h2 class="blog-post-title"><%= post.title %></h2>
-            <p class="blog-post-meta"><%= post.created_at %> by <a href="#"><%= @user.name %></a></p>
-    		<%= post.body %>
-    		<%= link_to 'Edit', edit_post_path(post) %> |
-			<%= link_to 'Back', posts_path %>
-			<% end %>
+            <% @user.posts.each do |post| %>
+            <h2 class="blog-post-title"><%= link_to post.title, post_path %></h2>
+            <p class="blog-post-meta"><%= post.created_at %> by <a href="#"><%= @user.name %></a><br>
+        <%= post.body %></p>
+        <%= link_to 'Edit', edit_post_path(post) %> |
+      <%= link_to 'Back', posts_path %>
+      <% end %>
 
 <p id="notice"><%= notice %></p>
 
@@ -72,4 +72,3 @@
         </div><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->
-
