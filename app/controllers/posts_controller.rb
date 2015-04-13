@@ -38,7 +38,7 @@ end
       flash[:success] = "post created!"
       redirect_to root_url
     else
-      render user_path
+      render blog_path
     end
 
   end
