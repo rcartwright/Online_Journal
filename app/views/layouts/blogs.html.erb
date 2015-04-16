@@ -1,0 +1,25 @@
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+         <%= link_to "Home", {controller: "blogs", action: "show", id: @blog}, class: "blog-nav-item active" %>
+          <a class="blog-nav-item" href="#">About</a>
+          <a class="blog-nav-item" href="#">Contact</a>
+
+           <% if signed_in? %>
+          <%= link_to "Log out", logout_path, method: "delete" %>
+          <% else %>
+          <%= link_to "Log in", login_path %>
+        <% end %>
+
+
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+<%= yield %>
+
+</div>
+
+<%=  parent_layout('application') %>
