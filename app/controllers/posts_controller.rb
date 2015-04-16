@@ -2,14 +2,13 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   protect_from_forgery :secret => 'secret_number',
                        :except => [:show]
+  layout "blogs"
 
   # GET /posts
   # GET /posts.json
   def index
-
-     @user = User.find(params[:user_id])
-     @posts = Post.find(params[:id])
-
+    @user = User.find(params[:user_id])
+    @posts = Post.find(params[:id])
   end
 
   # GET /posts/1
@@ -20,25 +19,26 @@ class PostsController < ApplicationController
     @user = @blog.user
   end
 
-
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
   end
 
-def new
-  @post = current_user.posts.build if signed_in?
-  @user = @post.blog
-end
+  def new
+  @blog = Blog.find(params[:blog_id])
+  @post = @blog.posts.build
+  end
 
   # POST /posts
   # POST /posts.json
   def create
-     @post = current_user.posts.build(post_params)
+  @blog = Blog.find(params[:blog_id])
+  @post = @blog.posts.build(post_params)
     if @post.save
       flash[:success] = "post created!"
-      redirect_to root_url
+      redirect_to blog_post_path(@blog, @post)
     else
-      render blog_path
+      render blog_index_path
     end
 
   end
