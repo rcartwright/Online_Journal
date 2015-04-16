@@ -11,7 +11,30 @@
     </div>
   <% end %>
 
-  <div class="actions">
+    <%= f.label :blog_name %><br>
+    <%= f.text_field :blog_name %>
+
+  <%= f.fields_for :user do |q| %>
+  <div class="field">
+    <%= q.label :name %><br>
+    <%= q.text_field :name %>
+  </div>
+  <div class="field">
+    <%= q.label :email %><br>
+    <%= q.text_field :email %>
+  </div>
+  <div class="field">
+<%= q.label :password %><br>
+<%= q.password_field :password %>
+</div>
+  <div class="field">
+<%= q.label :password_confirmation, "Confirmation" %><br>
+<%= q.password_field :password_confirmation %>
+</div>
+<% end %>
+
+<div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

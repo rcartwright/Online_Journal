@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
 
     belongs_to :blog
     has_many :posts
-    accepts_nested_attributes_for :blog
     validates :name, presence: true, length: { maximum: 50 }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true,
