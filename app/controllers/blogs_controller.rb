@@ -1,7 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  layout "blogs", only: [:new, :create, :show, :edit, :update, :destroy]
-  layout "admin", only: [:index]
+  layout "admin"
 
   # GET /blogs
   # GET /blogs.json
@@ -11,15 +10,16 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1
   # GET /blogs/1.json
-  def show
-     @blog = Blog.find(params[:id])
-     @posts = @blog.posts
-    @user = @blog.user
-  end
+ # def show
+ #    @blog = Blog.find(params[:id])
+ #    @posts = @blog.posts
+ #   @user = @blog.user
+ # end
 
   # GET /blogs/new
   def new
     @blog = Blog.new
+    @user = @blog.build_user
   end
 
   # GET /blogs/1/edit
@@ -33,7 +33,7 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
+        format.html { redirect_to blog_posts_path(@blog), notice: 'Blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
       else
         format.html { render :new }
@@ -74,6 +74,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params[:blog]
+      params.require(:blog).permit(:blog_name, user_attributes: [:name, :email, :password, :password_confirmation])
     end
 end

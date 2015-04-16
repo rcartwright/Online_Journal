@@ -1,14 +1,15 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   protect_from_forgery :secret => 'secret_number',
-                       :except => [:show]
+                       :except => [:show, :index]
   layout "blogs"
 
   # GET /posts
   # GET /posts.json
   def index
-    @user = User.find(params[:user_id])
-    @posts = Post.find(params[:id])
+    @blog = Blog.find(params[:blog_id])
+    @posts = @blog.posts
+    @user = @blog.user
   end
 
   # GET /posts/1
