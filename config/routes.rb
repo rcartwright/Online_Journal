@@ -4,19 +4,21 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-
+  get 'blogs' => 'blogs#index', :as => :blog_index
+  get 'blogs/new' => 'blogs#new', :as => :new_blog
 
   resources :users
 
-  resources :blogs do
-    resources :posts
+  resources :blogs, :path => '' do
+    resources :posts, :path => ''
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'users#index'
+   root 'blogs#index'
+
 
 #get ':id' => 'blogs#show', :as => :blog_index
 #get ':id/posts/:id' => 'posts#show', :as => :blog_post
