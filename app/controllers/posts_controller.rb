@@ -23,18 +23,19 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @blog = @post.blog
   end
 
   def new
-  @blog = Blog.find(params[:blog_id])
-  @post = @blog.posts.build
+    @blog = Blog.find(params[:blog_id])
+    @post = @blog.posts.build
   end
 
   # POST /posts
   # POST /posts.json
   def create
-  @blog = Blog.find(params[:blog_id])
-  @post = @blog.posts.build(post_params)
+    @blog = Blog.find(params[:blog_id])
+    @post = @blog.posts.build(post_params)
     if @post.save
       flash[:success] = "post created!"
       redirect_to blog_post_path(@blog, @post)
@@ -47,9 +48,11 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @post = Post.find(params[:id])
+    @blog = @post.blog(post_params)
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to blog_post_path(@blog, @post), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
