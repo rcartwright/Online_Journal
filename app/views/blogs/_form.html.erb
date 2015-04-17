@@ -1,4 +1,4 @@
-<%= form_for(@blog) do |f| %>
+<%= bootstrap_form_for(@blog, layout: :horizontal) do |f| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
@@ -11,30 +11,18 @@
     </div>
   <% end %>
 
-    <%= f.label :blog_name %><br>
-    <%= f.text_field :blog_name %>
+  <%= f.text_field :blog_name %>
 
   <%= f.fields_for :user do |q| %>
-  <div class="field">
-    <%= q.label :name %><br>
     <%= q.text_field :name %>
-  </div>
-  <div class="field">
-    <%= q.label :email %><br>
+    <%= q.label :email %>
     <%= q.text_field :email %>
-  </div>
-  <div class="field">
-<%= q.label :password %><br>
-<%= q.password_field :password %>
-</div>
-  <div class="field">
-<%= q.label :password_confirmation, "Confirmation" %><br>
-<%= q.password_field :password_confirmation %>
-</div>
-<% end %>
+    <%= q.label :password %>
+    <%= q.password_field :password %>
+    <%= q.label :password_confirmation, "Confirmation" %>
+    <%= q.password_field :password_confirmation %>
+  <% end %>
 
-<div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit %>
 
 <% end %>
