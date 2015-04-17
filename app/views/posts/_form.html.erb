@@ -1,15 +1,10 @@
-<%= form_for [@blog, @post] do |f| %>
+<%= bootstrap_form_for([@blog, @post], layout: :horizontal) do |f| %>
 
 
-  <div class="field">
-    <%= f.label :title %><br>
     <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br>
+
     <%= f.text_area :body %>
-  </div>
-  <div class="actions">
+
     <%= f.submit %>
-  </div>
+
 <% end %>
