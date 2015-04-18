@@ -2,10 +2,12 @@
 @import "bootstrap";
 
 body {
-
 background-color:#fff !important;
 }
-.navbar-inverse {
-border-color: #696661;
-background-color: #ffffff;
+.navbar-default {
+    background-color: #000;
+}
+
+.content {
+margin-top:50px;
 }
