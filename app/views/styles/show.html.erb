@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Layout:</strong>
+  <%= @style.layout %>
+</p>
+
+<p>
+  <strong>Header image:</strong>
+  <%= @style.header_image %>
+</p>
+
+<p>
+  <strong>Color theme:</strong>
+  <%= @style.color_theme %>
+</p>
+
+<%= link_to 'Edit', edit_style_path(@style) %> |
+<%= link_to 'Back', styles_path %>
