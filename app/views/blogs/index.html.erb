@@ -1,26 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Blogs</h1>
+<p><%= link_to 'New Blog', new_blog_path %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @blogs.each do |blog| %>
-      <tr>
-        <%= blog.blog_name %>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+
+        <%= blog.blog_name %><br>
+        <%= link_to 'Show', blog %>
+        <%= link_to 'Edit', edit_blog_path(blog) %>
+        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+  </div>
+</div>
+
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
