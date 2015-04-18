@@ -15,11 +15,8 @@
 
   <%= f.fields_for :user do |q| %>
     <%= q.text_field :name %>
-    <%= q.label :email %>
     <%= q.text_field :email %>
-    <%= q.label :password %>
     <%= q.password_field :password %>
-    <%= q.label :password_confirmation, "Confirmation" %>
     <%= q.password_field :password_confirmation %>
   <% end %>
 
