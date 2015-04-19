@@ -7,11 +7,10 @@ Rails.application.routes.draw do
   get 'blogs' => 'blogs#index', :as => :blog_index
   get 'blogs/new' => 'blogs#new', :as => :new_blog
 
-  resources :users
-
   resources :blogs, :path => '' do
     resources :posts, :path => ''
     resources :styles
+    resources :users
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
