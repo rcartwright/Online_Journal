@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418211906) do
+ActiveRecord::Schema.define(version: 20150418235558) do
 
   create_table "blogs", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(version: 20150418211906) do
   end
 
   create_table "styles", force: :cascade do |t|
-    t.string   "layout"
+    t.string   "layout",       default: "Flat_layout"
     t.string   "header_image"
-    t.string   "color_theme"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "color_theme",  default: "Cool_blue"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.integer  "blog_id"
   end
 
