@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_filter :signed_in_user, except: [:index, :show]
+  before_action :correct_user, except: [:index, :show]
+  layout "blogs", except: [:index]
 
   # GET /users
   # GET /users.json
@@ -10,35 +12,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-     @user = User.find(params[:id])
-     @posts = @user.posts
-  end
-
-  # GET /users/new
-  def new
-    @user = User.new
-    @blog = @user.build_blog
-
+    @user = User.find(params[:id])
+    @blog = @user.blog
+    @posts = @user.posts
   end
 
   # GET /users/1/edit
   def edit
-  end
-
-  # POST /users
-  # POST /users.json
-  def create
-    @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to blogs_path, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /users/1
@@ -67,8 +47,15 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
+
+    def signed_in_user
+      redirect_to login_url, notice: "Please sign in." unless signed_in?
+    end
+
+    def correct_user
+      @blog = Blog.find(params[:blog_id])
+      @user = @blog.user
+      redirect_to(root_url) unless current_user?(@user)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
