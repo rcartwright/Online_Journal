@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
 
-  resources :styles
-
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
@@ -13,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :blogs, :path => '' do
     resources :posts, :path => ''
+    resources :styles
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
