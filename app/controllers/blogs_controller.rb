@@ -20,6 +20,7 @@ class BlogsController < ApplicationController
   def new
     @blog = Blog.new
     @user = @blog.build_user
+    @style = @blog.build_style
   end
 
   # GET /blogs/1/edit
@@ -30,6 +31,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
+    @style = @blog.build_style
 
     respond_to do |format|
       if @blog.save

@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   get 'blogs' => 'blogs#index', :as => :blog_index
   get 'blogs/new' => 'blogs#new', :as => :new_blog
-
-  resources :users
+  get 'users' => 'users#index', :as => :user_index
 
   resources :blogs, :path => '' do
     resources :posts, :path => ''
+    resources :styles
+    resources :users
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

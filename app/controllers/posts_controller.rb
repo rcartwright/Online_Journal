@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_filter :signed_in_user, except: [:index, :show]
+  before_action :correct_user, except: [:index, :show]
   protect_from_forgery :secret => 'secret_number',
                        :except => [:show, :index]
   layout "blogs"
@@ -42,7 +43,6 @@ class PostsController < ApplicationController
     else
       render blog_index_path
     end
-
   end
 
   # PATCH/PUT /posts/1
@@ -66,20 +66,21 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to blog_path(@blog), notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
 
-    def correct_user
-      @post = current_user.posts.find_by_id(params[:id])
-      redirect_to root_url if @post.nil?
+    def signed_in_user
+      redirect_to login_url, notice: "Please sign in." unless signed_in?
     end
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
+
+    def correct_user
+      @blog = Blog.find(params[:blog_id])
+      @user = @blog.user
+      redirect_to(root_url) unless current_user?(@user)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

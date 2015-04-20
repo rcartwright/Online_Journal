@@ -1,29 +1,20 @@
       <div class="blog-header">
-
-        <h1 class="blog-title"><%= link_to @blog.blog_name, blog_path(@blog) %>
-</h1>
+        <h1 class="blog-title"><%= link_to @blog.blog_name, blog_path(@blog) %></h1>
         <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
       </div>
 
       <div class="row">
-
         <div class="col-sm-8 blog-main">
-
           <div class="blog-post">
-
-
             <h2 class="blog-post-title"><%= @post.title %></h2>
             <p class="blog-post-meta"><%= @post.created_at %> by <a href="#"><%= @user.name %></a></p>
     		<%= @post.body %>
     		<%= link_to 'Edit', edit_blog_post_path(@blog, @post) %> |
 			<%= link_to 'Back', blog_path(@blog) %>
 
-
 <p id="notice"><%= notice %></p>
 
-
 </div>
-
         <nav>
             <ul class="pager">
               <li><a href="#">Previous</a></li>
