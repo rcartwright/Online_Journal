@@ -3,7 +3,9 @@ class PostsController < ApplicationController
   before_action :correct_user, except: [:index, :show]
   protect_from_forgery :secret => 'secret_number',
                        :except => [:show, :index]
-  layout "blogs"
+  before_action :set_layout
+  layout :layout
+
 
   # GET /posts
   # GET /posts.json
@@ -72,6 +74,16 @@ class PostsController < ApplicationController
   end
 
   private
+
+    def set_layout
+      @blog = Blog.find(params[:blog_id])
+      @style = @blog.style
+      (@style && @style.layout) || 'blogs'
+    end
+
+    def layout
+      @style.layout
+    end
 
     def signed_in_user
       redirect_to login_url, notice: "Please sign in." unless signed_in?
