@@ -1,17 +1,16 @@
 <%= render 'shared/flat_navigation' %>
 
-<div class="content container">
-hi this is the flat_layout new way
+<div class="container margin">
 
-      <div class="blog-header">
+      <div class="blog-header text-center">
 
-        <h1 class="blog-title"><%= @blog.blog_name %> <%= @style.layout %></h1>
+        <h1 class="blog-title"><%= @blog.blog_name %></h1>
         <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
       </div>
 
       <div class="row">
 
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-12 blog-main">
 
 <%= yield %>
 
