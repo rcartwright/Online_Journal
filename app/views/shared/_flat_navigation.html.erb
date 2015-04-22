@@ -13,6 +13,7 @@
             <li><a href="#">Contact</a></li>
             <% if signed_in? %>
             <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+             <li><%= link_to 'New Post', new_blog_post_path(@blog) %></li>
             <% else %>
             <li><%= link_to "Log in", login_path %></li>
             <% end %>
