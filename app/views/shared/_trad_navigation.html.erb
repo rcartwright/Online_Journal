@@ -1,0 +1,16 @@
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+        <%= link_to @blog.blog_name, blog_path(@blog), class: "blog-nav-item" %>
+         <%= link_to "Home", blog_path(@blog), class: "blog-nav-item active" %>
+          <a class="blog-nav-item" href="#">About</a>
+          <a class="blog-nav-item" href="#">Contact</a>
+           <% if signed_in? %>
+          <%= link_to "Log out", logout_path, method: "delete", class: "blog-nav-item" %>
+          <%= link_to 'New Post', new_blog_post_path(@blog), class: "blog-nav-item" %>
+          <% else %>
+          <%= link_to "Log in", login_path, class: "blog-nav-item" %>
+        <% end %>
+        </nav>
+      </div>
+    </div>

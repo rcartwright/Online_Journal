@@ -1,0 +1,23 @@
+<%= render 'shared/flat_navigation' %>
+
+<div class="container margin">
+
+      <div class="blog-header text-center">
+
+        <h1 class="blog-title"><%= @blog.blog_name %></h1>
+        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12 blog-main">
+
+<%= yield %>
+
+</div>
+
+</div>
+</div>
+
+<%=  parent_layout('application') %>
+
