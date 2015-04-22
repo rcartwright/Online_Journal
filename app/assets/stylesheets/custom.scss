@@ -2,14 +2,22 @@
 @import "bootstrap";
 
 body {
-background-color:#fff !important;
+background-color:#eee !important;
 }
 .navbar-default {
     background-color: #000;
 }
 
 .content {
-margin-top:50px;
+padding-top:50px;
+background-color:#fff;
+}
+
+.margin {
+  padding-top:130px;
+  padding-left:100px;
+  padding-right:100px;
+  background-color:#fff;
 }
 
 /*
@@ -34,9 +42,9 @@ h6, .h6 {
 }
 
 h1, .h1, h2, .h2 {
-	a {
-		color: #000;
-	}
+  a {
+    color: #000;
+  }
 }
 
 
@@ -158,7 +166,7 @@ h1, .h1, h2, .h2 {
  */
 
 .blog-post {
-	margin-top: 30px;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 .blog-post-title {
