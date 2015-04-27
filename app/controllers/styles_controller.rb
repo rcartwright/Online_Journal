@@ -34,10 +34,6 @@ class StylesController < ApplicationController
     def set_layout
       @blog = Blog.find(params[:blog_id])
       @style = @blog.style
-      (@style && @style.layout) || 'blogs'
-    end
-
-    def layout
       @style.layout
     end
 

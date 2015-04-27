@@ -8,14 +8,6 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
   end
 
-  # GET /blogs/1
-  # GET /blogs/1.json
- # def show
- #    @blog = Blog.find(params[:id])
- #    @posts = @blog.posts
- #   @user = @blog.user
- # end
-
   # GET /blogs/new
   def new
     @blog = Blog.new
@@ -67,6 +59,7 @@ class BlogsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
