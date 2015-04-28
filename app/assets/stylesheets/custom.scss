@@ -1,5 +1,40 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+$colors:null;
+
+$themes:
+    ( blue_theme:
+        ( base: lightblue,
+          light: lighten(lightblue, 20%)),
+
+      grey_theme:
+        ( base: #222,
+          light: lighten(#222, 20%))
+    );
+
+@mixin themify {
+    @each $theme, $c in $themes {
+        .page--#{$theme} {
+            $colors: $c !global;
+
+            @content;
+        }
+        .#{$theme} {
+          .navbar-default {
+            background-color: theme(base);
+          }
+        }
+    }
+}
+
+@function theme($color: base) {
+    @return map-get($colors, $color);
+}
+
+@include themify {
+
+}
+
 
 body {
 background-color:#eee !important;
@@ -7,9 +42,6 @@ font-family: Georgia, "Times New Roman", Times, serif;
 color: #555;
 }
 
-.navbar-default {
-    background-color: #000;
-}
 
 .content {
 padding-top:130px;
