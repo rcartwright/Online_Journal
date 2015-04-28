@@ -2,7 +2,8 @@ class StylesController < ApplicationController
   before_action :set_style, only: [:edit, :update]
   before_filter :signed_in_user
   before_action :correct_user
-  layout "blogs"
+  before_action :set_layout
+  layout :layout
 
   # GET /styles/1/edit
   def edit
@@ -28,6 +29,12 @@ class StylesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_style
       @style = Style.find(params[:id])
+    end
+
+    def set_layout
+      @blog = Blog.find(params[:blog_id])
+      @style = @blog.style
+      @style.layout
     end
 
     def signed_in_user

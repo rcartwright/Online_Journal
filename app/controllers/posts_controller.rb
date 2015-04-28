@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   protect_from_forgery :secret => 'secret_number',
                        :except => [:show, :index]
   before_action :set_layout
-  layout :layout
+  layout :set_layout
 
 
   # GET /posts
@@ -78,10 +78,6 @@ class PostsController < ApplicationController
     def set_layout
       @blog = Blog.find(params[:blog_id])
       @style = @blog.style
-      (@style && @style.layout) || 'blogs'
-    end
-
-    def layout
       @style.layout
     end
 

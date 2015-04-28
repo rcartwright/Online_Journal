@@ -8,6 +8,7 @@
            <% if signed_in? %>
           <%= link_to "Log out", logout_path, method: "delete", class: "blog-nav-item" %>
           <%= link_to 'New Post', new_blog_post_path(@blog), class: "blog-nav-item" %>
+          <%= link_to 'Edit Style', edit_blog_style_path(@blog, @style), class: "blog-nav-item" %>
           <% else %>
           <%= link_to "Log in", login_path, class: "blog-nav-item" %>
         <% end %>

@@ -1,15 +1,75 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+$colors:null;
+
+$themes:
+    ( blue_theme:
+        ( base: lightblue,
+          light: lighten(lightblue, 10%),
+          dark: darken(lightblue, 35%),
+          light_font: #E4F9FF),
+
+      grey_theme:
+        ( base: #ddd,
+          light: lighten(#ddd, 7%),
+          dark: darken(#eee, 50%),
+          light_font: #E4F9FF),
+
+      periwinkle:
+        ( base: #9DBDC6,
+          light: lighten(#9DBDC6, 20%),
+          dark: #547179,
+          light_font: #E4F9FF)
+    );
+
+@mixin themify {
+    @each $theme, $c in $themes {
+        .page--#{$theme} {
+            $colors: $c !global;
+
+            @content;
+        }
+
+        body.#{$theme} {
+          background-color:theme(base) !important;
+          font-family: Georgia, "Times New Roman", Times, serif;
+          color: #555;
+}
+
+        .#{$theme} {
+          .navbar-default {
+            background-color: theme(dark);
+            .navbar-brand, a {
+              color: theme(light_font) !important;
+            }
+          }
+          .sidebar-module-inset {
+            background-color: theme(light);
+          }
+        }
+    }
+}
+
+@function theme($color: base) {
+    @return map-get($colors, $color);
+}
+
+@include themify {
+
+}
+
 
 body {
 background-color:#eee !important;
-}
-.navbar-default {
-    background-color: #000;
+font-family: Georgia, "Times New Roman", Times, serif;
+color: #555;
 }
 
+
 .content {
-padding-top:50px;
+padding-top:130px;
+padding-left:75px;
+padding-right:75px;
 background-color:#fff;
 }
 
@@ -23,11 +83,6 @@ background-color:#fff;
 /*
  * Globals
  */
-
-body {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: #555;
-}
 
 h1, .h1,
 h2, .h2,
@@ -53,8 +108,11 @@ h1, .h1, h2, .h2 {
  */
 
 @media (min-width: 1200px) {
-  .container {
+  #flat_layout .container {
     width: 970px !important;
+  }
+  #traditional .container {
+    width: 1120px !important;
   }
 }
 
@@ -138,7 +196,6 @@ h1, .h1, h2, .h2 {
 }
 .sidebar-module-inset {
   padding: 15px;
-  background-color: #f5f5f5;
   border-radius: 4px;
 }
 .sidebar-module-inset p:last-child,
