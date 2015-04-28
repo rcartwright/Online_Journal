@@ -13,4 +13,12 @@ module ApplicationHelper
 		end
 	end
 
+	def color
+  	if defined?(@style.color_theme)
+      @style.color_theme
+		else
+			'none'
+		end
+	end
+
 end
