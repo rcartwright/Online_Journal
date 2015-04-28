@@ -5,11 +5,21 @@ $colors:null;
 $themes:
     ( blue_theme:
         ( base: lightblue,
-          light: lighten(lightblue, 20%)),
+          light: lighten(lightblue, 10%),
+          dark: darken(lightblue, 35%),
+          light_font: #E4F9FF),
 
       grey_theme:
-        ( base: #222,
-          light: lighten(#222, 20%))
+        ( base: #ddd,
+          light: lighten(#ddd, 7%),
+          dark: darken(#eee, 50%),
+          light_font: #E4F9FF),
+
+      periwinkle:
+        ( base: #9DBDC6,
+          light: lighten(#9DBDC6, 20%),
+          dark: #547179,
+          light_font: #E4F9FF)
     );
 
 @mixin themify {
@@ -19,9 +29,22 @@ $themes:
 
             @content;
         }
+
+        body.#{$theme} {
+          background-color:theme(base) !important;
+          font-family: Georgia, "Times New Roman", Times, serif;
+          color: #555;
+}
+
         .#{$theme} {
           .navbar-default {
-            background-color: theme(base);
+            background-color: theme(dark);
+            .navbar-brand, a {
+              color: theme(light_font) !important;
+            }
+          }
+          .sidebar-module-inset {
+            background-color: theme(light);
           }
         }
     }
@@ -173,7 +196,6 @@ h1, .h1, h2, .h2 {
 }
 .sidebar-module-inset {
   padding: 15px;
-  background-color: #f5f5f5;
   border-radius: 4px;
 }
 .sidebar-module-inset p:last-child,
