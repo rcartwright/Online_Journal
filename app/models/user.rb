@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
     before_save { |user| user.email = email.downcase }
     before_save :create_remember_token
 
+    mount_uploader :avatar, AvatarUploader
+
     belongs_to :blog
     has_many :posts
     validates :name, presence: true, length: { maximum: 50 }
