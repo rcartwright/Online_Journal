@@ -3,4 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   include SessionsHelper
+
+  private
+      def set_layout
+      @style = @blog.style
+      @style.layout
+    end
 end
