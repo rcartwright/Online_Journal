@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, except: [:index, :show]
   before_action :correct_user, except: [:index, :show]
-  layout "blogs", except: [:index]
+  before_action :set_layout
+  layout :set_layout
 
   # GET /users
   # GET /users.json
@@ -19,6 +20,8 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
+    @blog = @user.blog
   end
 
   # PATCH/PUT /users/1
@@ -26,7 +29,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @blog, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -47,6 +50,11 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_layout
+      @blog = Blog.find(params[:blog_id])
+      @style = @blog.style
+      @style.layout
+    end
 
     def signed_in_user
       redirect_to login_url, notice: "Please sign in." unless signed_in?
@@ -60,6 +68,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, blog_attributes: [:blog_name])
+      params.require(:user).permit(:name, :avatar, :email, :password, :password_confirmation, blog_attributes: [:blog_name])
     end
 end
