@@ -3,7 +3,7 @@ class StylesController < ApplicationController
   before_filter :signed_in_user
   before_action :correct_user
   before_action :set_layout
-  layout :layout
+  layout :set_layout
 
   # GET /styles/1/edit
   def edit
@@ -29,22 +29,6 @@ class StylesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_style
       @style = Style.find(params[:id])
-    end
-
-    def set_layout
-      @blog = Blog.find(params[:blog_id])
-      @style = @blog.style
-      @style.layout
-    end
-
-    def signed_in_user
-      redirect_to login_url, notice: "Please sign in." unless signed_in?
-    end
-
-    def correct_user
-      @blog = Blog.find(params[:blog_id])
-      @user = @blog.user
-      redirect_to(root_url) unless current_user?(@user)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
