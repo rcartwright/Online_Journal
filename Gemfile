@@ -7,6 +7,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'bootstrap_form'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'carrierwave'
 gem 'friendly_id', '~> 5.1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

@@ -1,5 +1,9 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_filter :signed_in_user, except: [:index, :show]
+  before_action :correct_user, except: [:index, :show]
+  before_action :set_layout, only: [:edit, :update, :show]
+  layout :set_layout, only: [:edit, :update, :show]
   layout "admin"
 
   # GET /blogs
@@ -17,6 +21,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
+    @user = @blog.user
   end
 
   # POST /blogs
@@ -62,13 +67,8 @@ class BlogsController < ApplicationController
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_blog
-      @blog = Blog.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:blog_name, user_attributes: [:name, :email, :password, :password_confirmation])
+      params.require(:blog).permit(:blog_name, user_attributes: [:name, :email, :avatar, :password, :password_confirmation])
     end
 end

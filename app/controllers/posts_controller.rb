@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_blog, only: [:index, :new, :create]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_filter :signed_in_user, except: [:index, :show]
   before_action :correct_user, except: [:index, :show]
   protect_from_forgery :secret => 'secret_number',
@@ -10,7 +12,6 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @blog = Blog.find(params[:blog_id])
     @posts = @blog.posts
     @user = @blog.user
   end
@@ -18,26 +19,22 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
     @blog = @post.blog
     @user = @blog.user
   end
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
     @blog = @post.blog
   end
 
   def new
-    @blog = Blog.find(params[:blog_id])
     @post = @blog.posts.build
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @blog = Blog.find(params[:blog_id])
     @post = @blog.posts.build(post_params)
     if @post.save
       flash[:success] = "post created!"
@@ -50,7 +47,6 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    @post = Post.find(params[:id])
     @blog = @post.blog(post_params)
     respond_to do |format|
       if @post.update(post_params)
@@ -74,23 +70,6 @@ class PostsController < ApplicationController
   end
 
   private
-
-    def set_layout
-      @blog = Blog.find(params[:blog_id])
-      @style = @blog.style
-      @style.layout
-    end
-
-    def signed_in_user
-      redirect_to login_url, notice: "Please sign in." unless signed_in?
-    end
-
-    def correct_user
-      @blog = Blog.find(params[:blog_id])
-      @user = @blog.user
-      redirect_to(root_url) unless current_user?(@user)
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :body, :blog_id)
