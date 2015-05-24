@@ -49,22 +49,6 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_layout
-      @blog = Blog.find(params[:blog_id])
-      @style = @blog.style
-      @style.layout
-    end
-
-    def signed_in_user
-      redirect_to login_url, notice: "Please sign in." unless signed_in?
-    end
-
-    def correct_user
-      @blog = Blog.find(params[:blog_id])
-      @user = @blog.user
-      redirect_to(root_url) unless current_user?(@user)
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params

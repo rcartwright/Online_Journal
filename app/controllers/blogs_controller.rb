@@ -21,7 +21,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
-       @user = @blog.user
+    @user = @blog.user
   end
 
   # POST /blogs
@@ -67,21 +67,6 @@ class BlogsController < ApplicationController
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_blog
-      @blog = Blog.find(params[:id])
-    end
-
-    def signed_in_user
-      redirect_to login_url, notice: "Please sign in." unless signed_in?
-    end
-
-    def correct_user
-      @blog = Blog.find(params[:id])
-      @user = @blog.user
-      redirect_to(root_url) unless current_user?(@user)
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
       params.require(:blog).permit(:blog_name, user_attributes: [:name, :email, :avatar, :password, :password_confirmation])
