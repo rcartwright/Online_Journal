@@ -5,12 +5,21 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   private
+
     def set_blog
-      @blog = Blog.find(params[:blog_id])
-    end
+    	if params[:blog_id].present?
+  			@blog = Blog.find(params[:blog_id])
+  		else
+  			@blog = Blog.find(params[:id])
+  		end
+	end
 
     def set_post
-      @post = Post.find(params[:id])
+    	if params[:post_id].present?
+      		@post = Post.find(params[:post_id])
+      	else
+      		@post = Post.find(params[:id])
+      	end
     end
 
     def signed_in_user
@@ -18,7 +27,7 @@ class ApplicationController < ActionController::Base
     end
 
     def correct_user
-      @blog = Blog.find(params[:blog_id])
+      set_blog
       @user = @blog.user
       redirect_to(root_url) unless current_user?(@user)
     end
