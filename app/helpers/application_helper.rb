@@ -21,4 +21,21 @@ module ApplicationHelper
 		end
 	end
 
+	def full_title(page_title)
+    base_title = "Online Journal"
+    	if page_title.empty?
+      		base_title
+    	else
+      		"#{page_title}"
+    	end
+  	end
+
+  	def page_title
+  	if defined?(@blog.blog_name)
+      @blog.blog_name
+		else
+			""
+		end
+	end
+
 end
