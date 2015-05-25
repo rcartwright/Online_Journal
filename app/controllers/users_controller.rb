@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, except: [:index, :show]
   before_action :correct_user, except: [:index, :show]
+  before_action :set_user, except: [:index]
   before_action :set_layout
   layout :set_layout
 
@@ -49,6 +50,9 @@ class UsersController < ApplicationController
   end
 
   private
+    def set_user
+      @user = User.find(params[:id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
