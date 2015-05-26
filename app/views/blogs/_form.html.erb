@@ -16,7 +16,7 @@
   <%= f.fields_for :user do |q| %>
     <%= q.text_field :name %>
     <%= q.text_field :email %>
-      <%= f.file_field :avatar %>
+      <%= q.file_field :avatar %>
     <%= q.password_field :password %>
     <%= q.password_field :password_confirmation %>
   <% end %>
