@@ -2,8 +2,9 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_filter :signed_in_user, except: [:index, :show]
   before_action :correct_user, except: [:index, :show]
-  before_action :set_layout
-  layout :set_layout
+  before_action :set_layout, only: [:edit, :update, :show]
+  layout :set_layout, only: [:edit, :update, :show]
+  layout "admin"
 
   # GET /blogs
   # GET /blogs.json

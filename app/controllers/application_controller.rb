@@ -32,18 +32,9 @@ class ApplicationController < ActionController::Base
       redirect_to(root_url) unless current_user?(@user)
     end
 
-    def layout
-        set_blog
-        @style = @blog.style
-        @style.layout
-    end
-
     def set_layout
-      if @blog.present?
-        layout
-      else
-        "admin"
-      end
+      set_blog
+      @style = @blog.style
+      @style.layout
     end
-
 end
