@@ -32,11 +32,6 @@ class ApplicationController < ActionController::Base
       redirect_to(root_url) unless current_user?(@user)
     end
 
-    def layout
-      set_blog
-      @style = @blog.style
-    end
-
     def set_layout
       if params[:blog_id].present? || params[:id].present?
       set_blog
@@ -46,4 +41,5 @@ class ApplicationController < ActionController::Base
       "admin"
     end
     end
+
 end
