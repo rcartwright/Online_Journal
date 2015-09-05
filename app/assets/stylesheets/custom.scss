@@ -139,6 +139,23 @@ a {
   }
 }
 
+#flat_layout {
+  h1 {
+    text-align: center;
+  }
+  .blog-description {
+    text-align: center;
+  }
+}
+#traditional {
+  h1 {
+    text-align: left;
+  }
+  .blog-description {
+    text-align: left;
+  }
+}
+
 .navbar-brand {
   font-weight: 600;
 }
