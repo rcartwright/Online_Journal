@@ -1,15 +1,15 @@
       <div class="blog-header">
 
-        <h1 class="blog-title"><%= link_to full_title(page_title), blog_path(@blog) %></h1>
+        <h1><%= link_to full_title(page_title), blog_path(@blog) %></h1>
         <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
       </div>
 
             <% @blog.posts.each do |post| %>
 
  <div class="blog-post">
-            <h2 class="blog-post-title"><%= link_to post.title, blog_post_path(@blog, post) %></h2>
+            <h2><%= link_to post.title, blog_post_path(@blog, post) %></h2>
             <p class="blog-post-meta"><%= post.created_at %> by <a href="#"><%= @user.name %></a></p>
-        <%= post.body %>
+        <p><%= post.body %></p>
         <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> |
 </div>
 
