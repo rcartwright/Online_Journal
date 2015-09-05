@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-    before_save { |user| user.email = email.downcase }
-    before_save :create_remember_token
+    before_save { self.email = email.downcase }
 
     mount_uploader :avatar, AvatarUploader
 
@@ -18,7 +17,7 @@ class User < ActiveRecord::Base
 
     private
 
-    def create_remember_token
-      self.remember_token = SecureRandom.urlsafe_base64
+    def User.new_token
+        SecureRandom.urlsafe_base64
     end
 end

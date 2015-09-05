@@ -20,7 +20,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
-    @user = @blog.user
+
   end
 
   # POST /blogs
@@ -43,6 +43,7 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
+
     respond_to do |format|
       if @blog.update(blog_params)
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
@@ -68,6 +69,6 @@ class BlogsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:blog_name, user_attributes: [:name, :email, :avatar, :password, :password_confirmation])
+      params.require(:blog).permit(:blog_name, user_attributes: [:id, :name, :email, :avatar, :password, :password_confirmation])
     end
 end
