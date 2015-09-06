@@ -1,12 +1,10 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :set_post, only: [:new, :show, :edit, :update, :destroy]
-
-  # GET /comments
-  # GET /comments.json
-  def index
-    @comments = Comment.all
-  end
+  before_filter :signed_in_user, except: [:show]
+  before_action :correct_user, except: [:show]
+  before_action :set_layout
+  layout :set_layout
 
   # GET /comments/1
   # GET /comments/1.json
