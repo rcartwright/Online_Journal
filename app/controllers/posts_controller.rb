@@ -21,6 +21,7 @@ class PostsController < ApplicationController
   def show
     @blog = @post.blog
     @user = @blog.user
+    @comments = @post.comments
   end
 
   # GET /posts/1/edit
