@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:new, :show, :edit, :update, :destroy]
 
   # GET /comments
   # GET /comments.json
@@ -15,6 +16,8 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = @post.comments.build
+    @blog = @post.blog
+    #@comment = @post.build_comment
   end
 
   # GET /comments/1/edit
