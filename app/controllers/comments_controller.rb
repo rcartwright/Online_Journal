@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  before_action :set_post, only: [:new, :show, :edit, :update, :destroy]
+  before_action :set_post
   before_filter :signed_in_user, except: [:show]
   before_action :correct_user, except: [:show]
   before_action :set_layout
@@ -13,9 +13,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = @post.comments.build
     @blog = @post.blog
-    #@comment = @post.build_comment
+    @comment = @post.comments.build
   end
 
   # GET /comments/1/edit
@@ -25,11 +24,11 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
-
+    @comment = @post.comments.build(comment_params)
+    @blog = @post.blog
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to post_url(@comment), notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -70,6 +69,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:comment, :blog_id)
+      params.require(:comment).permit(:comment, :post_id, :blog_id)
     end
 end
