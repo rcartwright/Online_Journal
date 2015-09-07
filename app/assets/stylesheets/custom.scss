@@ -130,24 +130,32 @@ a {
  * Override Bootstrap's default container.
  */
 
-@media (min-width: 1200px) {
-  #flat_layout .container {
-    width: 970px !important;
-  }
-  #traditional .container {
-    width: 1200px !important;
-  }
-}
 
 #flat_layout {
+  .container {
+    @media (min-width: 1200px) {
+      width: 970px !important;
+    }
+  }
   h1 {
     text-align: center;
   }
   .blog-description {
     text-align: center;
   }
+  .content {
+    padding-top: 157px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #FFF;
+  }
 }
 #traditional {
+  .container {
+    @media (min-width: 1200px) {
+      width: 1200px !important;
+    }
+  }
   h1 {
     text-align: left;
   }
