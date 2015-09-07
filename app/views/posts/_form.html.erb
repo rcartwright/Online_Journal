@@ -1,4 +1,4 @@
-<%= bootstrap_form_for([@blog, @post], layout: :horizontal) do |f| %>
+<%= bootstrap_form_for([@blog, @post, @comment], layout: :horizontal) do |f| %>
 
     <%= f.text_field :title %>
     <%= f.text_area :body %>

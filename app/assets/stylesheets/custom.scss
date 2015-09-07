@@ -94,7 +94,7 @@ h5, .h5,
 h6, .h6 {
   margin-top: 0;
   font-family: 'Josefin Sans', sans-serif;
-  color: #333;
+  color: $off-black;
 }
 
 h1 {
@@ -130,24 +130,32 @@ a {
  * Override Bootstrap's default container.
  */
 
-@media (min-width: 1200px) {
-  #flat_layout .container {
-    width: 970px !important;
-  }
-  #traditional .container {
-    width: 1120px !important;
-  }
-}
 
 #flat_layout {
+  .container {
+    @media (min-width: 1200px) {
+      width: 970px !important;
+    }
+  }
   h1 {
     text-align: center;
   }
   .blog-description {
     text-align: center;
   }
+  .content {
+    padding-top: 157px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #FFF;
+  }
 }
 #traditional {
+  .container {
+    @media (min-width: 1200px) {
+      width: 1200px !important;
+    }
+  }
   h1 {
     text-align: left;
   }
@@ -231,13 +239,25 @@ a {
 .sidebar-module {
   padding: 15px;
   margin: 0 -15px 15px;
-
 }
 .sidebar-module-inset {
-  padding: 15px;
+  padding: 20px;
   border-radius: 4px;
-  margin-top: 100px;
+  //margin-top: 83px;
+  margin-top: 18px;
+  p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .image-container {
+    text-align: center;
+    .avatar {
+      width: 225px;
+      height: auto;
+    }
+  }
 }
+
 .sidebar-module-inset p:last-child,
 .sidebar-module-inset ul:last-child,
 .sidebar-module-inset ol:last-child {
@@ -265,6 +285,10 @@ a {
 .blog-post {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.comments {
+  //padding: 20px 0;
 }
 
 .blog-post-meta {
