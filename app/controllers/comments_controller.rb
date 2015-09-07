@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
     @blog = @post.blog
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to post_url(@comment), notice: 'Comment was successfully created.' }
+        format.html { redirect_to blog_post_url(@blog, @post), notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
