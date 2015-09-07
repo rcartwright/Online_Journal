@@ -30,7 +30,7 @@
       <tr>
         <td><%= comment.comment %></td>
         <td><%= comment.blog_id %></td>
-        <td><%= link_to 'Show', @comment %></td>
+        <td><%= link_to 'Show', blog_post_comment_path(@blog, @post, comment) %></td>
         <td><%= link_to 'Edit', edit_blog_post_comment_path(@blog, @post, comment)  %></td>
         <td><%= link_to 'Destroy', blog_post_comment_path(@blog, @post, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
