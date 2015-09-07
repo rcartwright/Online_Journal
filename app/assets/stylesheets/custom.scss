@@ -231,13 +231,17 @@ a {
 .sidebar-module {
   padding: 15px;
   margin: 0 -15px 15px;
-
 }
 .sidebar-module-inset {
-  padding: 15px;
+  padding: 25px;
   border-radius: 4px;
-  margin-top: 100px;
+  margin-top: 83px;
+  p {
+    font-size: 16px;
+    line-height: 23px;
+  }
 }
+
 .sidebar-module-inset p:last-child,
 .sidebar-module-inset ul:last-child,
 .sidebar-module-inset ol:last-child {
@@ -269,6 +273,14 @@ a {
 
 .comments {
   //padding: 20px 0;
+}
+
+.image-container {
+  text-align: center;
+  .avatar {
+    width: 193px;
+    height: auto;
+  }
 }
 
 .blog-post-meta {

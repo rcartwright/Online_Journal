@@ -1,9 +1,10 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-
-            <p>
- <%= image_tag(@user.avatar, :width => 150) if @user.avatar.present? %>
+<div class="image-container">
+ <%= image_tag(@user.avatar, :class => "avatar") if @user.avatar.present? %>
+</div>
 <br>
+<p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
