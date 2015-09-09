@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'blogs/new' => 'blogs#new', :as => :new_blog
   get ':id/edit' => 'blogs#edit', :as => :edit_blog
   get 'users' => 'users#index', :as => :user_index
+  get ':blog_id/posts/month/:month/:year' => 'posts#month', :as => :month_index
 
   resources :blogs, :path => '' do
     resources :posts, :path => '' do
