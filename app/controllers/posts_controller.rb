@@ -14,8 +14,6 @@ class PostsController < ApplicationController
   def index
     @posts = @blog.posts
     @user = @blog.user
-
-    #@posts = Post.all(:select => "title, id, posted_at", :order => "posted_at DESC")
     @post_months = @posts.group_by { |t| t.created_at.beginning_of_month }
   end
 
@@ -31,13 +29,6 @@ class PostsController < ApplicationController
     @posts = @blog.posts
     @user = @blog.user
     @post_months = @posts.by_year_and_month(params[:month], params[:year])
-    #@post_months = @posts.by_month(params[:month])
-    #@post_months = @posts.find(params[:month])
-   #@post_months = @posts.where("strftime('%m', created_at) = ?", "%02d" % month)
-    #@post_months = @posts.find(:all, :conditions => ["strftime('%m', created_at) = '?'", 'september'])
-    # @post_months = @posts.where("strftime('%Y-%m-%d', created_at) = ?", '2015-09-07')
-    #@post_months = @posts.where("strftime('%B', created_at) = ?", :month)
-    #@post_months = @posts.group_by { |t| t.created_at.beginning_of_month }
   end
 
   # GET /posts/1/edit
