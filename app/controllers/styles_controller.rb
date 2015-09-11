@@ -1,5 +1,7 @@
 class StylesController < ApplicationController
   before_action :set_style, only: [:edit, :update]
+  before_action :set_posts
+  before_action :set_post_months
   before_filter :signed_in_user
   before_action :correct_user
   before_action :set_layout

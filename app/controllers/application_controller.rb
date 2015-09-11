@@ -22,6 +22,16 @@ class ApplicationController < ActionController::Base
       	end
     end
 
+    def set_posts
+      set_blog
+      @posts = @blog.posts
+    end
+
+    def set_post_months
+      set_posts
+      @post_months = @posts.group_by { |t| t.created_at.beginning_of_month }
+    end
+
     def signed_in_user
       redirect_to login_url, notice: "Please sign in." unless signed_in?
     end

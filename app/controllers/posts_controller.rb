@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_blog, only: [:index, :new, :create]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_posts
+  before_action :set_post_months
   before_filter :signed_in_user, except: [:index, :show]
   before_action :correct_user, except: [:index, :show]
   protect_from_forgery :secret => 'secret_number',
@@ -23,12 +25,15 @@ class PostsController < ApplicationController
     @blog = @post.blog
     @user = @blog.user
     @comments = @post.comments
+    @posts = @blog.posts
+    @post_months = @posts.group_by { |t| t.created_at.beginning_of_month }
   end
 
   def month
     @posts = @blog.posts
     @user = @blog.user
-    @post_months = @posts.by_year_and_month(params[:month], params[:year])
+    @posts_by_month = @posts.by_year_and_month(params[:month], params[:year])
+    @post_months = @posts.group_by { |t| t.created_at.beginning_of_month }
   end
 
   # GET /posts/1/edit

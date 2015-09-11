@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_filter :signed_in_user, except: [:index, :show]
   before_action :correct_user, except: [:index, :show]
   before_action :set_user, except: [:index]
+  before_action :set_posts, only: [:show, :edit]
+  before_action :set_post_months, only: [:show, :edit]
   before_action :set_layout
   layout :set_layout
 

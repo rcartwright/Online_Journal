@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :set_post
+  before_action :set_posts
+  before_action :set_post_months
   before_filter :signed_in_user, except: [:show]
   before_action :correct_user, except: [:show]
   before_action :set_layout
