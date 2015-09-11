@@ -20,15 +20,6 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="archives">
-    <h2>Blog Archive</h2>
-<ul>
-    <% @post_months.sort.reverse.each do |month, posts| %>
-     <h3><%=h month.strftime("%B %Y") %></h3>
-    </ul>
-    <% end %>
-</div>
-
         <nav>
             <ul class="pager">
               <li><a href="#">Previous</a></li>
