@@ -21,7 +21,9 @@
             <ol class="list-unstyled">
 
     <% @post_months.sort.reverse.each do |month, posts| %>
-      <li><a href="#"><%=h month.strftime("%B %Y") %></a></li>
+
+    <li><%= link_to month.strftime("%B %Y"), month_index_path(@blog, month.strftime("%m"), month.strftime("%Y")) %></li>
+
     <% end %>
 
             </ol>
