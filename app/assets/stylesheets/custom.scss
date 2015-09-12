@@ -16,6 +16,12 @@ $themes:
           dark: darken(#eee, 50%),
           light_font: #E4F9FF),
 
+      red_theme:
+        ( base: #A72A2A,
+          light: lighten(#A72A2A, 15%),
+          dark: darken(#eee, 50%),
+          light_font: #E4F9FF),
+
       periwinkle:
         ( base: #9DBDC6,
           light: lighten(#9DBDC6, 20%),
