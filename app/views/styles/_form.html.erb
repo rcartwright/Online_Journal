@@ -11,7 +11,8 @@
     </div>
   <% end %>
 
-    <%= f.text_field :layout %>
+<%= f.select :layout, [["traditional", "traditional"], ["flat_layout", "flat_layout"]], { label: "Layout:" } %>
+
 
     <%= f.text_field :header_image %>
 
