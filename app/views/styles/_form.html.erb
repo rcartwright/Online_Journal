@@ -16,7 +16,9 @@
 
     <%= f.text_field :header_image %>
 
-    <%= f.text_field :color_theme %>
+
+<%= f.select :color_theme, [["blue_theme", "blue_theme"], ["grey_theme", "grey_theme"], ["red_theme", "red_theme"], ["periwinkle", "periwinkle"]], { label: "Color Theme:" } %>
+
 
   <div class="actions">
     <%= f.submit %>
