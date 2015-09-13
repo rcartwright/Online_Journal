@@ -2,8 +2,8 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :set_posts, only: [:edit]
   before_action :set_post_months, only: [:edit]
-  before_filter :signed_in_user, except: [:index, :show]
-  before_action :correct_user, except: [:index, :show]
+  before_filter :signed_in_user, except: [:index, :show, :new, :create]
+  before_action :correct_user, except: [:index, :show, :new, :create]
   before_action :set_layout
   layout :set_layout
 
