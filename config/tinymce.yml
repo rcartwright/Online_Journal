@@ -1,6 +1,19 @@
 toolbar:
-  - styleselect | bold italic | undo redo
-  - image | link
+  - styleselect | bold italic | undo redo | image | link | emoticons | hr | forecolor backcolor
 plugins:
   - image
   - link
+  - emoticons
+  - hr
+  - table
+  - wordcount
+  - textcolor
+  - imagetools
+  - autosave
+  - advlist
+
+tools:
+ -inserttable
+
+browser_spellcheck:
+  - true
