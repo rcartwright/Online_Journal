@@ -1,6 +1,7 @@
+<% content_for(:title, 'Home')%>
+<h1><%= yield :title %></h1>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Blogs</h1>
 <p><%= link_to 'New Blog', new_blog_path %></p>
 
     <% @blogs.each do |blog| %>
