@@ -1,6 +1,7 @@
+<% content_for(:title, 'Months')%>
       <div class="blog-header">
 
-        <h1><%= link_to full_title(page_title), blog_path(@blog) %></h1>
+        <h1><%= link_to content_for(:title), blog_path(@blog) %></h1>
         <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
       </div>
 

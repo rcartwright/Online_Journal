@@ -1,4 +1,5 @@
-<h1><%= full_title("Edit Blog Post") %></h1>
+<% content_for(:title, 'Edit Blog Post')%>
+<h1><%= yield :title %></h1>
 
 <%= render 'form' %>
 
