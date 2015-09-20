@@ -22,6 +22,12 @@ $themes:
           dark: darken(#eee, 50%),
           light_font: #E4F9FF),
 
+      all_white:
+        ( base: #fff,
+          light: #fff,
+          dark: #fff,
+          light_font: $off-black),
+
       periwinkle:
         ( base: #9DBDC6,
           light: lighten(#9DBDC6, 20%),
