@@ -88,6 +88,16 @@ background-color:#fff;
   background-color:#fff;
 }
 
+.header-image {
+  background-position: center bottom;
+  background-color: #999;
+  background-size: cover;
+  height: 600px;
+  margin-bottom: 0px;
+  z-index: 1;
+  position: relative;
+}
+
 /*
  * Globals
  */

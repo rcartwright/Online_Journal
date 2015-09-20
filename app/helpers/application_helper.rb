@@ -21,6 +21,14 @@ module ApplicationHelper
 		end
 	end
 
+	def header_image
+  	if defined?(@style.header_image)
+      @style.header_image
+		else
+			'none'
+		end
+	end
+
 	def base_title
 	  	if params[:blog_id].present?
 	      base_title = @blog.blog_name
