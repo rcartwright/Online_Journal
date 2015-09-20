@@ -29,6 +29,12 @@ module ApplicationHelper
 		end
 	end
 
+	def page_title
+		if params[:title].empty?
+			page_title = @blog.blog_name
+		end
+	end
+
 	def full_title(page_title)
 	"#{page_title} | #{base_title} "
     end
