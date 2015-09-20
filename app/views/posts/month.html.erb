@@ -1,13 +1,13 @@
-<% content_for(:title, 'Months')%>
-
+<!-- Only this month -->
 <% @post_month.each do |month, posts| %>
+<% content_for(:title, month)%>
       <div class="blog-header">
         <h1><%= link_to month, blog_path(@blog) %></h1>
         <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
       </div>
 
 
-
+<!-- Show all posts in this month -->
    <% posts.each do |post| %>
 
  <div class="blog-post">
