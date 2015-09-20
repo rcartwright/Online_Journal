@@ -32,7 +32,11 @@ class PostsController < ApplicationController
   def month
     @posts = @blog.posts
     @user = @blog.user
+    # Select only posts by month and year defined in url
     @posts_by_month = @posts.by_year_and_month(params[:month], params[:year])
+    # Group posts above only by month and not by day so it only shows month once at the top
+    @post_month = @posts_by_month.group_by { |post| post.created_at.strftime("%B") }
+    # Group all posts from user by month - for showing all months that user has posts in archives sidebar
     @post_months = @posts.group_by { |t| t.created_at.beginning_of_month }
   end
 

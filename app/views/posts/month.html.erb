@@ -1,22 +1,24 @@
 <% content_for(:title, 'Months')%>
-      <div class="blog-header">
 
-        <h1><%= link_to full_title(page_title), blog_path(@blog) %></h1>
+<% @post_month.each do |month, posts| %>
+      <div class="blog-header">
+        <h1><%= link_to month, blog_path(@blog) %></h1>
         <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
       </div>
 
-            <% @posts_by_month.each do |post| %>
 
+
+   <% posts.each do |post| %>
 
  <div class="blog-post">
             <h2><%= link_to post.title, blog_post_path(@blog, post) %></h2>
             <p class="blog-post-meta">Written on <%= post.created_at.strftime("%B %y, %Y") %> by <a href="#"><%= @user.name %></a></p>
-        <p><%= post.body %></p>
+        <p><%=raw post.body %></p>
         <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> |
 </div>
 
-
-      <% end %>
+    <% end %>
+           <% end %>
 
 <p id="notice"><%= notice %></p>
 
