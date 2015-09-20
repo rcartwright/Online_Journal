@@ -21,6 +21,10 @@ module ApplicationHelper
 		end
 	end
 
+  def header_image?
+    @style.header_image?
+  end
+
 	def header_image
   	if defined?(@style.header_image)
       @style.header_image
