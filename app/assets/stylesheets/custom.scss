@@ -102,6 +102,21 @@ background-color:#fff;
   margin-bottom: 0px;
   z-index: 1;
   position: relative;
+  padding: 260px;
+  text-align: center;
+
+  .header-h1 {
+    text-align: center;
+    color: white;
+    font-size: 75px;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .header-lead {
+    color: white;
+    text-align: center;
+    padding: 25px;
+  }
 }
 
 /*
