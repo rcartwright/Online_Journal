@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_posts
   before_action :set_post_months
+  before_action :header_image_on, only: [:index, :show]
   before_filter :signed_in_user, except: [:index, :show]
   before_action :correct_user, except: [:index, :show]
   protect_from_forgery :secret => 'secret_number',
@@ -87,6 +88,9 @@ class PostsController < ApplicationController
   end
 
   private
+  def header_image_on
+  @header_image_on = true
+end
     def set_month
       @month = Post.find(params[:month])
     end

@@ -21,10 +21,12 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
 <% if header_image? %>
+<% if @header_image_on == true %>
+
 <div class="header-image" style="background-image:url(<%= header_image %>)">
 <p class="text-center header-h1"><%= @blog.blog_name %></p>
              <p class="header-lead text-center">The official example template of creating a blog with Bootstrap.</p>
 </div>
+<% end %>
 <% end %>
