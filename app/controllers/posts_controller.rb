@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_posts
   before_action :set_post_months
-  before_filter :signed_in_user, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show]
   before_action :correct_user, except: [:index, :show]
   protect_from_forgery :secret => 'secret_number',
                        :except => [:show, :index]
