@@ -11,9 +11,9 @@
             <li><%= link_to "Home", blog_path(@blog) %></li>
             <% if signed_in? %>
             <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-             <li><%= link_to 'New Post', new_blog_post_path(@blog) %></li>
-             <li><%= link_to 'Edit Style', edit_blog_style_path(@blog, @style) %></li>
-             <li><%= link_to 'Edit Blog', edit_blog_path(@blog) %></li>
+             <li><%= link_to 'New Post', new_blog_post_path(@current_user.blog) %></li>
+             <li><%= link_to 'Edit Style', edit_blog_style_path(@current_user.blog, @style) %></li>
+             <li><%= link_to 'Edit Blog', edit_blog_path(@current_user.blog) %></li>
             <% else %>
             <li><%= link_to "Log in", login_path %></li>
             <% end %>
