@@ -2,6 +2,9 @@
 @import "bootstrap";
 $off-black: #444;
 $colors:null;
+$p-base-font: 16px;
+$h1-base-font: 55px;
+$h2-base-font: 40px;
 
 $themes:
     ( blue_theme:
@@ -163,6 +166,37 @@ p {
 
 a {
   font-weight: 600;
+}
+
+
+.nunito.extra-small-font {
+  p {
+    font-size: $p-base-font;
+    line-height: ($p-base-font*1.5)
+  }
+}
+
+.nunito.small-font {
+
+}
+
+.nunito.medium-font {
+  p {
+    font-size: floor($p-base-font * 1.2);
+    line-height: floor(($p-base-font*1.2) * 1.2);
+  }
+  .header-h1 {
+    font-size: 25px;
+    line-height: floor((25px*1.2) * 1.2);
+  }
+}
+
+.nunito.large-font {
+
+}
+
+.nunito.extra-large-font {
+
 }
 
 /*

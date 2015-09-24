@@ -35,6 +35,6 @@ class StylesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def style_params
-      params.require(:style).permit(:layout, :header_image, :color_theme)
+      params.require(:style).permit(:layout, :header_image, :font_size, :color_theme)
     end
 end

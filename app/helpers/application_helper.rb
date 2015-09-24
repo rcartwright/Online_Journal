@@ -21,6 +21,14 @@ module ApplicationHelper
 		end
 	end
 
+	def font_size
+  	if defined?(@style.font_size)
+      @style.font_size
+		else
+			'14px'
+		end
+	end
+
   def header_image?
     @style.header_image?
   end
