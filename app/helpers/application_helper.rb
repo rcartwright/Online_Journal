@@ -21,11 +21,19 @@ module ApplicationHelper
 		end
 	end
 
+	def font_family
+  	if defined?(@style.font_family)
+      @style.font_family
+		else
+			'nunito'
+		end
+	end
+
 	def font_size
   	if defined?(@style.font_size)
       @style.font_size
 		else
-			'14px'
+			'medium-font'
 		end
 	end
 

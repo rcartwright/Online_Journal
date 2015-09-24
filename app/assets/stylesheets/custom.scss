@@ -2,9 +2,10 @@
 @import "bootstrap";
 $off-black: #444;
 $colors:null;
-$p-base-font: 16px;
-$h1-base-font: 55px;
-$h2-base-font: 40px;
+$p-base-font: 20px;
+$p-line-height: floor($p-base-font*1.4);
+$h1: ($p-base-font + 35);
+$h2: ($p-base-font + 20);
 
 $themes:
     ( blue_theme:
@@ -171,32 +172,53 @@ a {
 
 .nunito.extra-small-font {
   p {
-    font-size: $p-base-font;
-    line-height: ($p-base-font*1.5)
+    font-size: ($p-base-font - 4);
+    line-height: ($p-line-height - 4);
   }
+  .header-h1 {
+    font-size: ($h1 - 4);
+  }
+
 }
 
 .nunito.small-font {
-
+  p {
+    font-size: ($p-base-font - 2);
+    line-height: ($p-line-height - 2);
+  }
+  .header-h1 {
+    font-size: ($h1 - 2);
+  }
 }
 
 .nunito.medium-font {
   p {
-    font-size: floor($p-base-font * 1.2);
-    line-height: floor(($p-base-font*1.2) * 1.2);
+    font-size: $p-base-font;
+    line-height: $p-line-height;
   }
   .header-h1 {
-    font-size: 25px;
-    line-height: floor((25px*1.2) * 1.2);
+    font-size: $h1;
   }
 }
 
 .nunito.large-font {
-
+  p {
+    font-size: ($p-base-font + 2);
+    line-height: ($p-line-height + 2);
+  }
+  .header-h1 {
+    font-size: ($h1 + 2);
+  }
 }
 
 .nunito.extra-large-font {
-
+  p {
+    font-size: ($p-base-font + 4);
+    line-height: ($p-line-height + 4);
+  }
+  .header-h1 {
+    font-size: ($h1 + 4);
+  }
 }
 
 /*
