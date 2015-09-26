@@ -106,7 +106,7 @@ background-color:#fff;
   margin-bottom: 0px;
   z-index: 1;
   position: relative;
-  padding: 245px;
+  padding: 240px;
   text-align: center;
 
   .header-h1 {
@@ -173,9 +173,11 @@ a {
 
 
 .nunito.extra-small-font {
-  p {
-    font-size: ($p-base-font - 4);
-    line-height: ($p-line-height - 4);
+  .blog-post-text {
+    p {
+      font-size: ($p-base-font - 4);
+      line-height: ($p-line-height - 4);
+    }
   }
   h1 {
     font-size: ($h1 - 4);
@@ -188,8 +190,10 @@ a {
 
 .nunito.small-font {
   .blog-post-text {
-    font-size: ($p-base-font - 2);
-    line-height: ($p-line-height - 2);
+    p {
+      font-size: ($p-base-font - 2);
+      line-height: ($p-line-height - 2);
+    }
   }
   h1 {
     font-size: ($h1 - 2);
@@ -202,8 +206,10 @@ a {
 
 .nunito.medium-font {
   .blog-post-text {
-    font-size: $p-base-font;
-    line-height: $p-line-height;
+    p {
+      font-size: $p-base-font;
+      line-height: $p-line-height;
+    }
   }
   h1 {
     font-size: $h1;
@@ -216,8 +222,10 @@ a {
 
 .nunito.large-font {
   .blog-post-text {
-    font-size: ($p-base-font + 2);
-    line-height: ($p-line-height + 2);
+    p {
+      font-size: ($p-base-font + 2);
+      line-height: ($p-line-height + 2);
+    }
   }
   h1 {
     font-size: ($h1 + 2);
@@ -229,8 +237,10 @@ a {
 
 .nunito.extra-large-font {
   .blog-post-text {
-    font-size: ($p-base-font + 4);
-    line-height: ($p-line-height + 4);
+    p {
+      font-size: ($p-base-font + 4);
+      line-height: ($p-line-height + 4);
+    }
   }
   h1 {
     font-size: ($h1 + 4);
@@ -356,7 +366,7 @@ a {
   margin: 0 -15px 15px;
 }
 .sidebar-module-inset {
-  padding: 20px;
+  padding: 10px;
   border-radius: 4px;
   //margin-top: 83px;
   //margin-top: 18px;
@@ -365,7 +375,8 @@ a {
   }
   p {
     font-size: 18px;
-    line-height: 24px;
+    line-height: 27px;
+    margin-bottom: 20px;
   }
   .image-container {
     text-align: center;
