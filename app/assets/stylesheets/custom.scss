@@ -4,8 +4,8 @@ $off-black: #444;
 $colors:null;
 $p-base-font: 20px;
 $p-line-height: floor($p-base-font*1.3);
-$h1: ($p-base-font + 35);
-$h2: ($p-base-font + 20);
+$h1: ($p-base-font + 30);
+$h2: ($p-base-font + 15);
 
 $themes:
     ( blue_theme:
@@ -49,7 +49,6 @@ $themes:
 
         body.#{$theme} {
           background-color:theme(base) !important;
-          font-family: 'Josefin Sans', sans-serif;
           color: $off-black;
 }
 
@@ -79,7 +78,6 @@ $themes:
 
 body {
 background-color:#eee !important;
-font-family: Georgia, "Times New Roman", Times, serif;
 color: $off-black;
 }
 
@@ -106,14 +104,13 @@ background-color:#fff;
   margin-bottom: 0px;
   z-index: 1;
   position: relative;
-  padding: 240px;
+  padding: 235px;
   text-align: center;
 
   .header-h1 {
     text-align: center;
     color: white;
     font-size: 70px;
-    font-family: 'Nunito', sans-serif;
   }
 
   .header-lead {
@@ -136,18 +133,15 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   margin-top: 0;
-  font-family: 'Josefin Sans', sans-serif;
   color: $off-black;
 }
 
 h1 {
   font-size: 55px;
   font-weight: 600;
-  font-family: 'Nunito', sans-serif;
 }
 h2 {
   margin-bottom: 5px;
-  font-family: 'Nunito', sans-serif;
   font-size: 40px;
   font-weight: 100;
 }
@@ -158,7 +152,6 @@ h1, .h1, h2, .h2 {
 }
 
 p {
-  font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   //font-size: 20px;
   //line-height: 27px;
@@ -171,8 +164,26 @@ a {
   font-weight: 600;
 }
 
+.josefin {
+  body, p, h1, h2, .header-h1, .header-lead {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+}
 
-.nunito.extra-small-font {
+.nunito {
+  body, p, h1, h2, .header-h1, .header-lead{
+    font-family: 'Nunito', sans-serif;
+  }
+}
+.rachels-pick {
+    h1, h2, .header-h1 {
+      font-family: 'Nunito', sans-serif;
+    }
+    body, p, .header-lead {
+      font-family: 'Josefin Sans', sans-serif;
+    }
+}
+.nunito.extra-small-font, .josefin.extra-small-font, .rachels-pick.extra-small-font {
   .blog-post-text {
     p {
       font-size: ($p-base-font - 4);
@@ -188,7 +199,7 @@ a {
   }
 }
 
-.nunito.small-font {
+.nunito.small-font, .josefin.small-font, .rachels-pick.small-font {
   .blog-post-text {
     p {
       font-size: ($p-base-font - 2);
@@ -204,7 +215,7 @@ a {
   }
 }
 
-.nunito.medium-font {
+.nunito.medium-font, .josefin.medium-font, .rachels-pick.medium-font {
   .blog-post-text {
     p {
       font-size: $p-base-font;
@@ -220,7 +231,7 @@ a {
   }
 }
 
-.nunito.large-font {
+.nunito.large-font, .josefin.large-font, .rachels-pick.large-font {
   .blog-post-text {
     p {
       font-size: ($p-base-font + 2);
@@ -235,7 +246,7 @@ a {
   }
 }
 
-.nunito.extra-large-font {
+.nunito.extra-large-font, .josefin.extra-large-font, .rachels-pick.extra-large-font {
   .blog-post-text {
     p {
       font-size: ($p-base-font + 4);
@@ -375,8 +386,8 @@ a {
   }
   p {
     font-size: 18px;
-    line-height: 27px;
-    margin-bottom: 20px;
+    line-height: 26px;
+    margin-bottom: 15px;
   }
   .image-container {
     text-align: center;

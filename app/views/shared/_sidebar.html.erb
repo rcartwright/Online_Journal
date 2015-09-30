@@ -4,7 +4,8 @@
  <%= image_tag(@user.avatar, :class => "avatar, img-thumbnail") if @user.avatar.present? %>
 </div>
 <br>
-<p>
+<div class="blog-post-text">
+  <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
@@ -17,6 +18,8 @@
             <p>
               <strong>About Me:</strong>
               Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+            </div>
           </div>
           <div class="sidebar-module">
             <h4>Archives</h4>
