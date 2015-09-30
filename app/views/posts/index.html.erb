@@ -11,8 +11,8 @@
 
  <div class="blog-post">
             <h2><%= link_to post.title, blog_post_path(@blog, post) %></h2>
-            <p class="blog-post-meta">Written on <%= post.created_at.strftime("%B %y, %Y") %> by <a href="#"><%= @user.name %></a></p>
-        <p><%=raw post.body %></p>
+            <div class="blog-post-text"><p>Written on <%= post.created_at.strftime("%B %y, %Y") %> by <a href="#"><%= @user.name %></a></p></div>
+        <div class="blog-post-text"><%=raw post.body %></div>
         <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> |
         <%= link_to 'Delete', blog_post_path(@blog, post), method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>

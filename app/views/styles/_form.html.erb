@@ -19,6 +19,10 @@
 
 <%= f.select :color_theme, [["blue_theme", "blue_theme"], ["grey_theme", "grey_theme"], ["red_theme", "red_theme"], ["all_white", "all_white"], ["periwinkle", "periwinkle"]], { label: "Color Theme:" } %>
 
+<%= f.select :font_family, [["Nunito", "nunito"], ["Josefin", "josefin"], ["Rachels Pick", "rachels-pick"]], { label: "Font Family:" } %>
+
+<%= f.select :font_size, [["extra-small-font", "extra-small-font"], ["small-font", "small-font"], ["medium-font", "medium-font"], ["large-font", "large-font"], ["extra-large-font", "extra-large-font"]], { label: "Font Size:" } %>
+
 
   <div class="actions">
     <%= f.submit %>
