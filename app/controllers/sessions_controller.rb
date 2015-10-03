@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  before_action :set_layout
+  layout :set_layout
+
   def new
   end
 
