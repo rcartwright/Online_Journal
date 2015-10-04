@@ -17,7 +17,9 @@
   <%= f.fields_for :user do |q| %>
     <%= q.text_field :name %>
     <%= q.text_field :email %>
-      <%= q.file_field :avatar unless :edit? %>
+    <% if params[:action] == "edit" %>
+      <%= q.file_field :avatar %>
+      <% end %>
     <%= q.password_field :password %>
     <%= q.password_field :password_confirmation %>
   <% end %>
