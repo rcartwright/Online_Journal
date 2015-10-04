@@ -137,6 +137,7 @@ h6, .h6 {
 h1 {
   font-size: 55px;
   font-weight: 600;
+  text-align: center;
 }
 h2 {
   margin-bottom: 5px;
@@ -437,6 +438,10 @@ a {
   color: #666;
 }
 
+.form-container {
+  max-width: 500px;
+  margin: 0px auto;
+}
 
 /*
  * Footer
