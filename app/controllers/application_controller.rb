@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
     end
 
     def signed_in_user
-      redirect_to login_url, notice: "Please sign in." unless signed_in?
+      redirect_to login_url, notice: "Please sign in." unless logged_in?
     end
 
     def correct_user
