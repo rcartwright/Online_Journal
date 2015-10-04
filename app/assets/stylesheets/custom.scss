@@ -443,6 +443,17 @@ a {
   margin: 0px auto;
 }
 
+.alert {
+  position: absolute;
+  top: 50px;
+  z-index: 300;
+  display: block;
+  width: 50%;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+
 /*
  * Footer
  */
