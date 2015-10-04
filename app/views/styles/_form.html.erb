@@ -1,4 +1,5 @@
-<%= bootstrap_form_for([@blog, @style], layout: :horizontal) do |f| %>
+<div class="form-container">
+<%= bootstrap_form_for([@blog, @style], layout: :horizontal, label_col: "col-sm-4", control_col: "col-sm-8") do |f| %>
   <% if @style.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@style.errors.count, "error") %> prohibited this style from being saved:</h2>
@@ -28,3 +29,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
