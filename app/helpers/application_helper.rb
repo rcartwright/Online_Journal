@@ -6,16 +6,24 @@ module ApplicationHelper
 	end
 
 	def layout
-  	if defined?(@style.layout)
-      @style.layout
+  		if params[:blog_id].present? || params[:id].present?
+  	  		if defined?(@style.color_theme)
+      			@style.layout
+			else
+				"flat_layout"
+			end
 		else
 			'admin'
 		end
 	end
 
 	def color
-  	if defined?(@style.color_theme)
-      @style.color_theme
+		if params[:blog_id].present? || params[:id].present?
+  			if defined?(@style.color_theme)
+      			@style.color_theme
+			else
+				'blue-theme'
+			end
 		else
 			'none'
 		end
