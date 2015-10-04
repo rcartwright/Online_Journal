@@ -1,5 +1,5 @@
 <div class="form-container">
-<%= bootstrap_form_for(@blog, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+<%= bootstrap_form_for(@blog, layout: :horizontal, label_col: "col-sm-4", control_col: "col-sm-8") do |f| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
