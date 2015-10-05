@@ -13,13 +13,15 @@
   <% end %>
 
   <%= f.text_field :blog_name %>
-
+  <% if params[:action] == "edit" %>
+  <%= f.text_field :status %>
+  <% end %>
   <%= f.fields_for :user do |q| %>
     <%= q.text_field :name %>
     <%= q.text_field :email %>
     <% if params[:action] == "edit" %>
       <%= q.file_field :avatar %>
-      <% end %>
+    <% end %>
     <%= q.password_field :password %>
     <%= q.password_field :password_confirmation %>
   <% end %>

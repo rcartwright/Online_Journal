@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151002050025) do
+ActiveRecord::Schema.define(version: 20151005022650) do
 
   create_table "blogs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "blog_name"
     t.string   "slug"
+    t.string   "status"
   end
 
   add_index "blogs", ["slug"], name: "index_blogs_on_slug", unique: true

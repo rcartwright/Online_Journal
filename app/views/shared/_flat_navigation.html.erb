@@ -27,7 +27,7 @@
 
 <div class="header-image" style="background-image:url(<%= header_image %>)">
 <div class="text-center header-h1"><%= @blog.blog_name %></div>
-             <div class="header-lead text-center">The official example template of creating a blog with Bootstrap.</div>
+             <div class="header-lead text-center"><%= @blog.status %></div>
 </div>
 <% end %>
 <% end %>
