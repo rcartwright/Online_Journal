@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'blogs' => 'blogs#index', :as => :blog_index
   get 'blogs/new' => 'blogs#new', :as => :new_blog
   get ':id/edit' => 'blogs#edit', :as => :edit_blog
+  get ':id/edit/password' => 'blogs#password', :as => :edit_password
   get 'users' => 'users#index', :as => :user_index
   get ':blog_id/posts/:month/:year' => 'posts#month', :as => :month_index
 

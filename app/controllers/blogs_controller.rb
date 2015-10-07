@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :set_posts, only: [:edit]
-  before_action :set_post_months, only: [:edit]
+  before_action :set_posts, only: [:edit, :password]
+  before_action :set_post_months, only: [:edit, :update, :password, :update_password]
   before_filter :signed_in_user, except: [:index, :show, :new, :create]
   before_action :correct_user, except: [:index, :show, :new, :create]
   before_action :set_layout
@@ -23,6 +23,21 @@ class BlogsController < ApplicationController
   # GET /blogs/1/edit
   def edit
 
+  end
+
+  def password
+  end
+
+  def update_password
+    respond_to do |format|
+      if @blog.update(password_params)
+        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
+        format.json { render :show, status: :ok, location: @blog }
+      else
+        format.html { render :password }
+        format.json { render json: @blog.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # POST /blogs
@@ -71,6 +86,10 @@ class BlogsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:blog_name, :status, user_attributes: [:id, :name, :email, :avatar, :password, :password_confirmation])
+      params.require(:blog).permit(:blog_name, :status, user_attributes: [:id, :name, :email, :avatar])
+    end
+
+    def password_params
+      params.require(:blog).permit(user_attributes: [:password, :password_confirmation])
     end
 end
