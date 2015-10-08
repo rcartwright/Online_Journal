@@ -45,6 +45,14 @@ module ApplicationHelper
 		end
 	end
 
+def etc_page
+if params[:action] != "index"
+	'etc_content'
+else
+	''
+end
+end
+
   def header_image?
     @style.header_image?
   end
