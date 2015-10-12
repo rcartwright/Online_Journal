@@ -165,7 +165,15 @@ a {
 }
 
 form {
-  margin-top: 35px;
+  padding: 35px 0;
+  .actions {
+    text-align: center;
+  }
+}
+.btn-default {
+  @extend .btn-primary;
+  margin-top: 15px;
+  text-align: center;
 }
 
 .josefin {
@@ -308,6 +316,7 @@ form {
     h1 {
       text-align: center;
     }
+
   }
 
 .none {
