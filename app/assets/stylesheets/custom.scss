@@ -79,11 +79,12 @@ $themes:
 body {
 background-color:#eee !important;
 color: $off-black;
+margin-top: 50px;
 }
 
 
 .content {
-padding: 130px 75px;
+padding: 90px 75px;
 background-color:#fff;
 }
 
@@ -161,6 +162,10 @@ p {
 
 a {
   font-weight: 600;
+}
+
+form {
+  margin-top: 35px;
 }
 
 .josefin {
@@ -279,7 +284,7 @@ a {
   }
   .content {
     //padding-top: 157px;
-    padding-top: 110px;
+    padding-top: 70px;
     padding-left: 100px;
     padding-right: 100px;
     background-color: #FFF;
@@ -299,7 +304,7 @@ a {
   }
 }
 
-.etc_pages {
+#traditional.etc_content {
     h1 {
       text-align: center;
     }
