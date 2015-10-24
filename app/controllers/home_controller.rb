@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  layout "home"
+    before_action :set_layout
+  	layout :set_layout
 
   def index
   end

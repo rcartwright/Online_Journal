@@ -44,12 +44,13 @@ class ApplicationController < ActionController::Base
 
     def set_layout
       if params[:blog_id].present? || params[:id].present?
-      set_blog
-      @style = @blog.style
-      @style.layout
-    else
-      "admin"
+        set_blog
+        @style = @blog.style
+        @style.layout
+      elsif params[:controller] == "home"
+        "home"
+      else
+        "admin"
+      end
     end
-    end
-
 end

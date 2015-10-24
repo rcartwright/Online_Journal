@@ -12,6 +12,8 @@ module ApplicationHelper
 			else
 				"flat_layout"
 			end
+		elsif params[:controller] == "home"
+			'home'
 		else
 			'admin'
 		end
