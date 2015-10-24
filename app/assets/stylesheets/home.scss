@@ -10,7 +10,8 @@ section {
 	min-width: 960px;
 	//opacity: 0;
 	opacity: 1;
-	height: 600px;
+	//height: 600px;
+	height: 900px;
 }
 main {
 	overflow-x: hidden;
@@ -61,7 +62,7 @@ main {
 #slide-1 {
 
 	.slide-background {
-		background-image:url('./cave.JPG');
+		background-image:url('./san-diego3.JPG');
 	}
 	.moving-content {
 		bottom: 200px;
@@ -87,7 +88,7 @@ main {
 /* Slide 3 */
 #slide-3 {
 	.slide-background {
-		background-image:url('./san-diego3.JPG');
+		background-image:url('./Camelback.JPG');
 	}
 	.moving-content {
 		margin-left: -239px;
@@ -98,19 +99,8 @@ main {
 	}
 }
 
-/* Slide 4 */
-#slide-4 {
-	.slide-background {
-		background-image:url('./Camelback.JPG');
-	}
-	.moving-content {
-		margin-left: -450px;
-		position: fixed;
-		top: 250px;
-	}
-	h2 {
-		background: none;
-		padding-left: 0;
-		padding-right: 0;
+#home {
+	.navbar-default {
+		background-color: white;
 	}
 }
