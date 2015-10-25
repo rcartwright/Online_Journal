@@ -34,9 +34,11 @@ main {
 
 .moving-content {
 	max-width: 700px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
+	//position: absolute;
+	position: fixed;
+	//left: 336px;
+	left: 336px;
+	top: 250px;
 
 	h2  {
 		color: #fff8de;
@@ -60,38 +62,42 @@ main {
 
 /* Slide 1 */
 #slide-1 {
-
+	z-index: 20;
 	.slide-background {
 		background-image:url('./san-diego3.JPG');
 	}
 	.moving-content {
-		bottom: 200px;
-		top: auto;
+		//bottom: 200px;
+		//top: auto;
+		z-index: 20;
 	}
 }
 
 /* Slide 2 */
 #slide-2 {
+	z-index: 21;
 	.slide-background {
 		background-image:url('./san-diego2.JPG');
 	}
 	.moving-content {
-		margin-left: -450px;
-		top: auto;
+		z-index: 21;
+		//margin-left: -450px;
+		//top: auto;
 	}
 	h2 {
-		position: fixed;
-		top: 70%;
+
 	}
 }
 
 /* Slide 3 */
 #slide-3 {
+	z-index: 22;
 	.slide-background {
 		background-image:url('./Camelback.JPG');
 	}
 	.moving-content {
-		margin-left: -239px;
+		z-index: 22;
+		//margin-left: -239px;
 	}
 	h2 {
 		color: #f2ead6;
@@ -103,4 +109,56 @@ main {
 	.navbar-default {
 		background-color: white;
 	}
+	.panel {
+		position: fixed;
+		top: 20%;
+		//left: 0;
+		//right: 0;
+		//margin: 0 auto;
+		right: 150px;
+		border-radius: 15px;
+	}
+}
+
+.panel {
+	max-width: 400px;
+}
+
+
+  .container-md-height {
+    display: table;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .row-md-height {
+    display: table-row;
+  }
+
+  .col-md-height {
+    display: table-cell;
+    float: none;
+  }
+
+
+
+/* vertical alignment styles */
+
+.col-top {
+  vertical-align: top;
+}
+
+.col-middle {
+  vertical-align: middle;
+}
+
+.col-bottom {
+  vertical-align: bottom;
+}
+
+
+
+.container {
+  float: center;
+  vertical-align: middle;
 }
