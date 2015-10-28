@@ -1,0 +1,13 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "base/custom.scss";
+@import "base/scaffolds.scss";
+
+@import "styles/blogs.scss";
+@import "styles/comments.scss";
+@import "styles/home.scss";
+@import "styles/posts.scss";
+@import "styles/sessions.scss";
+@import "styles/styles.scss";
+@import "styles/users.scss";
