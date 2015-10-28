@@ -1,0 +1,38 @@
+$off-black: #444;
+$colors:null;
+$p-base-font: 20px;
+$p-line-height: floor($p-base-font*1.3);
+$h1: ($p-base-font + 30);
+$h2: ($p-base-font + 15);
+
+$themes:
+    ( blue_theme:
+        ( base: lightblue,
+          light: lighten(lightblue, 10%),
+          dark: darken(lightblue, 35%),
+          light_font: #E4F9FF),
+
+      grey_theme:
+        ( base: #ddd,
+          light: lighten(#ddd, 7%),
+          dark: darken(#eee, 50%),
+          light_font: #E4F9FF),
+
+      red_theme:
+        ( base: #A72A2A,
+          light: lighten(#A72A2A, 15%),
+          dark: darken(#eee, 50%),
+          light_font: #E4F9FF),
+
+      all_white:
+        ( base: #fff,
+          light: #fff,
+          dark: #fff,
+          light_font: $off-black),
+
+      periwinkle:
+        ( base: #9DBDC6,
+          light: lighten(#9DBDC6, 20%),
+          dark: #547179,
+          light_font: #E4F9FF)
+    );

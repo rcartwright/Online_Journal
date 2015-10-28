@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import "base/variables.scss";
+@import "base/mixins.scss";
 @import "base/custom.scss";
 @import "base/scaffolds.scss";
 
