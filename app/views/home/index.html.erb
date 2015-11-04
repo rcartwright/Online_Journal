@@ -1,5 +1,52 @@
 <main>
-	<div class="panel panel-default">
+    <section id="slide-1" class="slide">
+
+
+    	<div class="slide-background" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
+
+
+    		    		<div class="panel panel-default">
+	 <div class="panel-body">
+      <h1>Sign Up Here</h1>
+<div class="form-container">
+<%= bootstrap_form_for(@blog) do |f| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+      <% @blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :blog_name, hide_label: true, placeholder: "Blog Name" %>
+  <% if params[:action] == "edit" %>
+  <%= f.text_field :status %>
+  <% end %>
+  <%= f.fields_for :user do |q| %>
+    <%= q.text_field :name, hide_label: true, placeholder: "Full Name" %>
+    <%= q.text_field :email, hide_label: true, placeholder: "Your Email" %>
+    <% if params[:action] == "edit" %>
+      <%= q.file_field :avatar %>
+    <% end %>
+      <% if params[:action] == "index" %>
+     <%= q.password_field :password, hide_label: true, placeholder: "Password" %>
+    <%= q.password_field :password_confirmation, hide_label: true, placeholder: "Confirm Password" %>
+  <% end %>
+  <% end %>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
+</div>
+</div>
+</div>
+
+
+    		    <!--		<div class="panel panel-default">
 	 <div class="panel-body">
 	 	<h1>Sign Up Here</h1>
 <form>
@@ -19,9 +66,11 @@
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 </div>
-</div>
-    <section id="slide-1" class="slide">
-    	<div class="slide-background" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
+</div>-->
+
+
+
+
 			<div class="content-container">
 	    		<div class="moving-content" data-center-top="left: -200px; opacity: 1" data-center="left: 400px; opacity: 1" data--100-bottom="opacity: 0" data-anchor-target="#slide-1">
 		    		<h2>Blog about the ocean...</h2>
