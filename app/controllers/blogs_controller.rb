@@ -92,4 +92,8 @@ class BlogsController < ApplicationController
     def password_params
       params.require(:blog).permit(user_attributes: [:password, :password_confirmation])
     end
+
+      def full_blog_params
+      params.require(:blog).permit(:blog_name, :status, user_attributes: [:id, :name, :email, :avatar, :password, :password_confirmation])
+    end
 end

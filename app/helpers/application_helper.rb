@@ -71,7 +71,7 @@ end
 	  	if params[:blog_id].present?
 	      base_title = @blog.blog_name
 		else
-			base_title = "Online Journal"
+			base_title = "Uttify"
 		end
 	end
 
