@@ -43,7 +43,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params)
+    @blog = Blog.new(full_blog_params)
     @style = @blog.build_style
 
     respond_to do |format|

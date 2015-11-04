@@ -22,7 +22,7 @@
     <% if params[:action] == "edit" %>
       <%= q.file_field :avatar %>
     <% end %>
-        <% if params[:action] == "create" %>
+        <% if params[:action] != "edit" || "update" %>
           <%= q.password_field :password %>
     <%= q.password_field :password_confirmation %>
     <% end %>
