@@ -92,7 +92,6 @@ a {
 }
 
 form {
-  padding: 35px 0;
   .actions {
     text-align: center;
   }
@@ -333,6 +332,7 @@ form {
 .form-container {
   max-width: 550px;
   margin: 0px auto;
+  padding: 35px 0;
 }
 
 .alert {
