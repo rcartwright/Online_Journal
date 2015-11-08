@@ -6,6 +6,7 @@
         <h1><%= link_to @blog.blog_name, blog_path(@blog) %></h1>
         <p class="lead blog-description"><%= @blog.status %></p>
       </div>
+      <% if @blog.posts.exists? %>
 
             <% @blog.posts.each do |post| %>
 
@@ -20,7 +21,9 @@
 
 
       <% end %>
-
+  <% else %>
+  This blog currently has no blog posts. Check back again soon!
+    <% end %>
 
 
         <nav>
