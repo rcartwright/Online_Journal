@@ -7,15 +7,17 @@
           <a class="navbar-brand" href="#"><%= base_title %></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+
+<div class="navbar-form navbar-right">
+    <%= bootstrap_form_for(:session, url: login_path, layout: :inline) do |f| %>
+
+      <%= f.email_field :email,  hide_label: true, placeholder: "Email", class: 'form-control' %>
+
+      <%= f.password_field :password,  hide_label: true, placeholder: "Password", class: 'form-control' %>
+
+      <%= f.submit "Sign In", class: "btn btn-success" %>
+   <% end %>
+ </div>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
