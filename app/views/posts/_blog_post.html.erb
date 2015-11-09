@@ -1,3 +1,4 @@
+<%= hide_if_header_image(blog_post_header) %>
 <div class="blog-post">
   <% if @blog.posts.exists? %>
     <% @blog.posts.each do |post| %>
