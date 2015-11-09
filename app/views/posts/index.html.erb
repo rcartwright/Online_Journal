@@ -1,30 +1,25 @@
 
 
       <% content_for(:title, "Blog Posts") %>
-      <div class="blog-header">
 
-        <h1><%= link_to blog_title(@blog.blog_name), blog_path(@blog) %></h1>
-        <p class="lead blog-description"><%= blog_title(@blog.status) %></p>
-      </div>
+      <%= hide_if_header_image(blog_post_header) %>
+
+      <div class="blog-post">
       <% if @blog.posts.exists? %>
 
             <% @blog.posts.each do |post| %>
 
- <div class="blog-post">
             <h2><%= link_to post.title, blog_post_path(@blog, post) %></h2>
             <div class="blog-post-text"><p>Written on <%= post.created_at.strftime("%B %y, %Y") %> by <a href="#"><%= @user.name %></a></p></div>
         <div class="blog-post-text"><%=raw post.body %></div>
         <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> |
         <%= link_to 'Delete', blog_post_path(@blog, post), method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
-
-
 
       <% end %>
   <% else %>
   This blog currently has no blog posts. Check back again soon!
     <% end %>
-
+</div>
 
         <nav>
             <ul class="pager">

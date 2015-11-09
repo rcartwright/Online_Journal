@@ -67,11 +67,18 @@ end
 		end
 	end
 
-	def blog_title(title_content)
+	def blog_post_header
+		"<div class='blog-header'>
+        <h1>#{ link_to @blog.blog_name, blog_path(@blog) }</h1>
+        <p class='lead blog-description'>#{ @blog.status }</p>
+      	</div>".html_safe
+	end
+
+	def hide_if_header_image(blog_content)
 		if header_image?
 			''
 		else
-			title_content
+			blog_content
 		end
 	end
 
