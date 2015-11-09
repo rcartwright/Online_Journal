@@ -1,18 +1,6 @@
 <% content_for(:title, "Show Blog" )%>
 
-                <div class="blog-header">
-
-        <h1><%= link_to @blog.blog_name, blog_path(@blog) %></h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-      </div>
-
-          <div class="blog-post">
-            <h2><%= @post.title %></h2>
-            <p class="blog-post-meta">Written on <%= @post.created_at.strftime("%B %y, %Y") %> by <a href="#"><%= @user.name %></a></p>
-    		<div class="blog-post-text"><%=raw @post.body %></div>
-            <%= link_to 'Back', blog_path(@blog) %> |
-    		<%= link_to 'Edit', edit_blog_post_path(@blog, @post) %> |
-            <%= link_to 'Delete', blog_post_path(@blog, @post), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= render :partial => "blog_post", :post => @post %>
 
 <p>&nbsp;</p>
 
@@ -32,7 +20,7 @@
     </div>
     <% end %>
 
-</div>
+
         <nav>
             <ul class="pager">
               <li><a href="#">Previous</a></li>
