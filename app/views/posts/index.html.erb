@@ -3,8 +3,8 @@
       <% content_for(:title, "Blog Posts") %>
       <div class="blog-header">
 
-        <h1><%= link_to @blog.blog_name, blog_path(@blog) %></h1>
-        <p class="lead blog-description"><%= @blog.status %></p>
+        <h1><%= link_to blog_title(@blog.blog_name), blog_path(@blog) %></h1>
+        <p class="lead blog-description"><%= blog_title(@blog.status) %></p>
       </div>
       <% if @blog.posts.exists? %>
 

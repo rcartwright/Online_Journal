@@ -67,17 +67,25 @@ end
 		end
 	end
 
+	def blog_title(title_content)
+		if header_image?
+			''
+		else
+			title_content
+		end
+	end
+
 	def base_title
 	  	if params[:blog_id].present?
-	      base_title = @blog.blog_name
+	    	@blog.blog_name
 		else
-			base_title = "Uttify"
+			"Uttify"
 		end
 	end
 
 	def page_title
 		if params[:title].empty?
-			page_title = @blog.blog_name
+			@blog.blog_name
 		end
 	end
 
