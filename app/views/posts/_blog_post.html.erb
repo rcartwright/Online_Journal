@@ -1,7 +1,6 @@
-<%= hide_if_header_image(blog_post_header) %>
 <div class="blog-post">
   <% if @blog.posts.exists? %>
-    <% @blog.posts.each do |post| %>
+
       <h2><%= link_to post.title, blog_post_path(@blog, post) %></h2>
       <div class="blog-post-text">
         <p class="blog-post-date">
@@ -13,7 +12,7 @@
       </div>
       <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> |
       <%= link_to 'Delete', blog_post_path(@blog, post), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
+
   <% else %>
     This blog currently has no blog posts. Check back again soon!
   <% end %>

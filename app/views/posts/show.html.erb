@@ -1,6 +1,6 @@
 <% content_for(:title, "Show Blog" )%>
-
-<%= render :partial => "blog_post", :post => @post %>
+<%= hide_if_header_image(blog_post_header) %>
+<%= render :partial => "blog_post", locals: { post: @post } %>
 
 <p>&nbsp;</p>
 
