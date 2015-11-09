@@ -27,8 +27,14 @@
 <% if @header_image_on == true %>
 
 <div class="header-image" style="background-image:url(<%= header_image %>)">
-<div class="text-center header-h1"><%= @blog.blog_name %></div>
-             <div class="header-lead text-center"><%= @blog.status %></div>
+  <div class="header-image-text">
+    <div class="text-center header-h1">
+      <%= @blog.blog_name %>
+    </div>
+    <div class="header-lead text-center">
+      <%= @blog.status %>
+    </div>
+  </div>
 </div>
 <% end %>
 <% end %>

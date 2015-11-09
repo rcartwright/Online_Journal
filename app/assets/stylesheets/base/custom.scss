@@ -35,13 +35,23 @@ min-height: 100vh;
   margin-bottom: 0px;
   z-index: 1;
   position: relative;
-  padding: 180px;
+  //padding: 180px;
   text-align: center;
+
+  display: table;
+  width: 100%;
+
+  .header-image-text {
+    display: table-cell;
+    vertical-align: middle;
+  }
 
   .header-h1 {
     text-align: center;
     color: white;
     font-size: 70px;
+    line-height: 70px;
+    //padding: 13px 0;
   }
 
   .header-lead {
@@ -49,7 +59,9 @@ min-height: 100vh;
     text-align: center;
     //padding: 25px;
     font-size: 25px;
-    line-height: 37px;
+    line-height: 30px;
+    padding: 20px 0px;
+   // line-height: 37px;
   }
 }
 
