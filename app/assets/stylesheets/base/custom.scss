@@ -149,6 +149,9 @@ form {
       font-size: ($p-base-font - 4);
       line-height: ($p-line-height - 4);
     }
+    .blog-post-date {
+      font-size: ($p-base-font - 6);
+    }
   }
   h1 {
     font-size: ($h1 - 4);
@@ -164,6 +167,9 @@ form {
     p {
       font-size: ($p-base-font - 2);
       line-height: ($p-line-height - 2);
+    }
+    .blog-post-date {
+      font-size: ($p-base-font - 4);
     }
   }
   h1 {
@@ -181,6 +187,9 @@ form {
       font-size: $p-base-font;
       line-height: $p-line-height;
     }
+    .blog-post-date {
+      font-size: ($p-base-font - 2);
+    }
   }
   h1 {
     font-size: $h1;
@@ -197,6 +206,9 @@ form {
       font-size: ($p-base-font + 2);
       line-height: ($p-line-height + 2);
     }
+    .blog-post-date {
+      font-size: ($p-base-font);
+    }
   }
   h1 {
     font-size: ($h1 + 2);
@@ -211,6 +223,9 @@ form {
     p {
       font-size: ($p-base-font + 4);
       line-height: ($p-line-height + 4);
+    }
+    .blog-post-date {
+      font-size: ($p-base-font + 2);
     }
   }
   h1 {
@@ -344,6 +359,16 @@ form {
 
 .blog-post {
   margin-bottom: 30px;
+  h2 {
+    padding-bottom: 3px;
+  }
+  .blog-post-text {
+    .blog-post-date {
+      padding-bottom: 12px;
+      font-style: italic;
+      font-weight: 600;
+    }
+  }
 }
 
 .comments {
