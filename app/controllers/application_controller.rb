@@ -22,6 +22,17 @@ class ApplicationController < ActionController::Base
       	end
     end
 
+    def set_blog_post
+      set_post
+      set_blog
+      @blog_post = @post.blog
+    end
+
+    def set_post_comments
+      set_post
+      @comments = @post.comments
+    end
+
     def set_posts
       set_blog
       @posts = @blog.posts
