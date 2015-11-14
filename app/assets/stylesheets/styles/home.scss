@@ -65,14 +65,30 @@ main {
 	z-index: 20;
 	.slide-background {
 		background-image:url('./san-diego3.JPG');
+		//box-shadow: 0px 5000px 0px rgba(174, 174, 174, 0.16) inset;
 	}
 	.moving-content {
 		//bottom: 200px;
 		//top: auto;
 		z-index: 20;
 	}
+	.tint {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left:0;
+		right: 0;
+		bottom:0;
+		background-color: rgba(0,0,0, 0.05);
+	}
 	h2 {
-		color: $off-black;
+		color: #fff;
+		text-shadow: 0px 5px 30px rgba(200,200,200,0.5);
+		letter-spacing: 1px;
+	}
+	h1 {
+		color: #666;
 	}
 }
 

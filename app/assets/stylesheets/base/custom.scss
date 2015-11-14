@@ -12,11 +12,16 @@ color: $off-black;
 margin-top: 50px;
 }
 
-
 .content {
-padding: 90px 75px;
-background-color:#fff;
-min-height: 100vh;
+  padding: 90px 0;
+  //padding-top: 75px;
+  //padding-bottom: 75px;
+  background-color:#fff;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 50px 35px;
+  }
 
 }
 
@@ -31,7 +36,8 @@ min-height: 100vh;
   background-position: center bottom;
   background-color: #999;
   background-size: cover;
-  height: 510px;
+  //height: 510px;
+  height: 440px;
   margin-bottom: 0px;
   z-index: 1;
   position: relative;
@@ -244,7 +250,8 @@ form {
 #flat_layout {
   .container {
     @media (min-width: 1200px) {
-      width: 970px !important;
+      //width: 970px !important;
+      width: 770px !important;
     }
   }
   h1 {
@@ -256,15 +263,23 @@ form {
   .content {
     //padding-top: 157px;
     padding-top: 70px;
-    padding-left: 100px;
-    padding-right: 100px;
+    //padding-left: 100px;
+    //padding-right: 100px;
     background-color: #FFF;
   }
+  .navbar-brand, .nav > li > a {
+    padding: 15px 10px;
+  }
+
 }
 #traditional {
+  .content {
+    padding-top: 60px;
+  }
   .container {
     @media (min-width: 1200px) {
-      width: 1200px !important;
+      //width: 1200px !important;
+      width: 1080px !important;
     }
   }
   h1 {
@@ -411,4 +426,18 @@ form {
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+
+
+
+
+.img-thumbnail {
+  max-width: 62%;
+}
+.header-img {
+  height: 440px !important;
+}
+.navbar {
+  min-height: 0px;
 }
