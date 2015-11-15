@@ -1,23 +1,24 @@
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        <div class="col-sm-4 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-<div class="image-container">
- <%= image_tag(@user.avatar, :class => "avatar, img-circle") if @user.avatar.present? %>
-</div>
-<br>
-<div class="blog-post-text">
-  <p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
+
+<div class="blog-post-text">
+ <!-- <p class="text-center">
+  <strong>Name:</strong>
+  <strong><%= @user.name %></strong>
+</p>-->
+
+<!--<p>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
+</p>-->
+ <span class="sidebar-title"><strong>About <%= @user.name %>:</strong></span>
+<div class="image-container">
+ <%= image_tag(@user.avatar, :class => "avatar img-circle img-thumbnail") if @user.avatar.present? %>
+</div>
 
-            <p>
-              <strong>About Me:</strong>
-              Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+              <span class="sidebar-content">Rachel Cartwright is an author who has been writing since she was 13 years old. She has writted 100 books and is named the best selling author of 2015.</span>
 
             </div>
           </div>
