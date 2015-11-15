@@ -8,16 +8,8 @@
 
 
 <!-- Show all posts in this month -->
-   <% posts.each do |post| %>
 
- <div class="blog-post">
-            <h2><%= link_to post.title, blog_post_path(@blog, post) %></h2>
-            <p class="blog-post-meta">Written on <%= post.created_at.strftime("%B %y, %Y") %> by <a href="#"><%= @user.name %></a></p>
-        <p><%=raw post.body %></p>
-        <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> |
-</div>
-
-    <% end %>
+ <%= render :partial => @posts %>
            <% end %>
 
 <p id="notice"><%= notice %></p>
