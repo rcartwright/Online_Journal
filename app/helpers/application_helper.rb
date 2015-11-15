@@ -80,7 +80,7 @@ module ApplicationHelper
 	end
 
 	def base_title
-	  	if params[:blog_id].present?
+	  	if params[:blog_id].present? || params[:id].present?
 	    	@blog.blog_name
 		else
 			"Uttify"
