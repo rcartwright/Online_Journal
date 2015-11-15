@@ -1,11 +1,11 @@
 <% content_for(:title, "Show Blog" )%>
 <%= hide_if_header_image(blog_post_header) %>
-<%= render :partial => "blog_post", locals: { post: @blog_post } %>
+ <%= render :partial => @post %>
 
 <p>&nbsp;</p>
 
 <h2>Listing Comments</h2>
-        <button class="btn btn-default"><%= link_to 'New Comment', new_blog_post_comment_path(@blog, @blog_post, @comment) %></button>
+        <button class="btn btn-default"><%= link_to 'New Comment', new_blog_post_comment_path(@blog, @post, @comment) %></button>
 <hr>
     <% @comments.each do |comment| %>
     <div class="comments">

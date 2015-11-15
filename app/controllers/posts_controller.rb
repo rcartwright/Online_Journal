@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_blog, only: [:index, :new, :create]
-  before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :index, :new, :create]
+  before_action :set_posts, only: [:index]
   before_action :set_post_comments, only: [:show]
-  before_action :set_posts
   before_action :set_post_months
   before_action :header_image_on, only: [:index, :show]
   before_filter :signed_in_user, except: [:index, :show]
@@ -24,10 +23,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    #@blog = @post.blog
     @user = @blog.user
-    #@comments = @post.comments
-    @posts = @blog.posts
     @post_months = @posts.group_by { |t| t.created_at.beginning_of_month }
   end
 
