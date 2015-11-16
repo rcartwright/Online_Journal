@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  # :set_posts To show archives in sidebar
   before_action :set_posts, only: [:edit, :password]
   before_action :set_post_months, only: [:edit, :update, :password, :update_password]
   before_filter :signed_in_user, except: [:index, :show, :new, :create]
@@ -88,7 +89,7 @@ class BlogsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:blog_name, :status, user_attributes: [:id, :name, :email, :avatar])
+      params.require(:blog).permit(:blog_name, :status, :about, user_attributes: [:id, :name, :email, :avatar])
     end
 
     def password_params

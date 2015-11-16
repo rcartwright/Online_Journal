@@ -26,6 +26,9 @@
           <%= q.password_field :password %>
     <%= q.password_field :password_confirmation %>
     <% end %>
+  <% if params[:action] == "edit" %>
+  <%= f.text_field :about, label: "About Me" %>
+  <% end %>
   <% end %>
 <div class="actions">
   <%= f.submit %>
