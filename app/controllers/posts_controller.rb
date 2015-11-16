@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_blog, only: [:show, :index, :new, :create]
   before_action :set_posts, only: [:index]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_post_comments, only: [:show]
   before_action :set_post_months
   before_action :header_image_on, only: [:index, :show]
@@ -15,7 +16,6 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = @blog.posts
     @user = @blog.user
     @post_months = @posts.group_by { |t| t.created_at.beginning_of_month }
   end
@@ -28,7 +28,6 @@ class PostsController < ApplicationController
   end
 
   def month
-    @posts = @blog.posts
     @user = @blog.user
     # Select only posts by month and year defined in url
     @posts_by_month = @posts.by_year_and_month(params[:month], params[:year])
@@ -40,7 +39,6 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @blog = @post.blog
   end
 
   def new

@@ -15,10 +15,11 @@ class ApplicationController < ActionController::Base
 	end
 
     def set_post
+      set_blog
     	if params[:post_id].present?
-      		@post = Post.find(params[:post_id])
+      		@post = @blog.posts.find(params[:post_id])
       	else
-      		@post = Post.find(params[:id])
+      		@post = @blog.posts.find(params[:id])
       	end
     end
 
