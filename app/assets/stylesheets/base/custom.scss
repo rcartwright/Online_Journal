@@ -155,7 +155,8 @@ form {
       font-family: 'Josefin Sans', sans-serif;
     }
       span, p {
-    font-weight: 400;
+    //font-weight: 400;
+    font-weight: 300;
   }
 }
 .nunito.extra-small-font, .josefin.extra-small-font, .rachels-pick.extra-small-font {
@@ -250,12 +251,12 @@ form {
     }
   }
   .sidebar-title {
-    font-size: ($sidebar-title + 1);
-    line-height: ($sidebar-title-lineheight + 1);
+    font-size: ($sidebar-title);
+    line-height: ($sidebar-title-lineheight);
   }
   .sidebar-content {
-    font-size: ($sidebar-content + 1);
-    line-height: ($sidebar-content-lineheight + 1);
+    font-size: ($sidebar-content - 1);
+    line-height: ($sidebar-content-lineheight - 1);
   }
   h1 {
     font-size: ($h1 + 2);
@@ -276,12 +277,12 @@ form {
     }
   }
   .sidebar-title {
-    font-size: ($sidebar-title + 2);
-    line-height: ($sidebar-title-lineheight + 2);
+    font-size: ($sidebar-title);
+    line-height: ($sidebar-title-lineheight);
   }
   .sidebar-content {
-    font-size: ($sidebar-content + 2);
-    line-height: ($sidebar-content-lineheight + 2);
+    font-size: ($sidebar-content - 1);
+    line-height: ($sidebar-content-lineheight - 1);
   }
   h1 {
     font-size: ($h1 + 4);
