@@ -134,11 +134,17 @@ form {
   body, p, h1, h2, span, .header-h1, .header-lead {
     font-family: 'Josefin Sans', sans-serif;
   }
+  span, p {
+    font-weight: 400;
+  }
 }
 
 .nunito {
   body, p, h1, h2, span, .header-h1, .header-lead{
     font-family: 'Nunito', sans-serif;
+  }
+  span, p {
+    font-weight: 100;
   }
 }
 .rachels-pick {
@@ -148,6 +154,9 @@ form {
     body, p, span, .header-lead {
       font-family: 'Josefin Sans', sans-serif;
     }
+      span, p {
+    font-weight: 400;
+  }
 }
 .nunito.extra-small-font, .josefin.extra-small-font, .rachels-pick.extra-small-font {
   .blog-post-text {
@@ -218,8 +227,8 @@ form {
     line-height: $sidebar-title-lineheight;
   }
   .sidebar-content {
-    font-size: $sidebar-content;
-    line-height: $sidebar-content-lineheight;
+    font-size: ($sidebar-content - 1);
+    line-height: ($sidebar-content-lineheight - 1);
   }
   h1 {
     font-size: $h1;
@@ -436,6 +445,19 @@ form {
     padding-bottom: 3px;
   }
   .blog-post-text {
+    img {
+      margin: 30px;
+      //display: block;
+    }
+    img[style*="float: left"] {
+      margin: 15px 15px 15px 0;
+      display: inline;
+    }
+
+    img[style*="float: right"] {
+      margin: 15px;
+      display: inline;
+    }
     .blog-post-date {
       //padding-bottom: 12px;
       font-style: italic;

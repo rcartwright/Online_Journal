@@ -7,4 +7,5 @@ class Blog < ActiveRecord::Base
 	has_one :user, :dependent => :destroy
 	has_one :style, :dependent => :destroy
 	accepts_nested_attributes_for :user
+	validates_associated :user
 end
