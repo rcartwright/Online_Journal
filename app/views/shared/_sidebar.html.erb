@@ -14,8 +14,12 @@
 </p>-->
  <span class="sidebar-title"><strong>About <%= @user.name %>:</strong></span>
 <div class="image-container">
- <%= image_tag(@user.avatar, :class => "avatar img-circle img-thumbnail") if @user.avatar.present? %>
+  <% if @user.avatar? %>
+  <div class="avatar img-thumbnail">
+    <div class="img-avatar" style="background-image:url(<%= @user.avatar %>)">
 </div>
+</div>
+ <% end %>
 
 
               <span class="sidebar-content"><%= @blog.about || "" %></span>
