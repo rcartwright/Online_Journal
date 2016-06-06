@@ -110,11 +110,11 @@ main {
 		//margin: 0 auto;
 		border-radius: 15px;
 		z-index: 200;
-		@media (min-width: $screen-lg-min) {
-			right: 150px;
-		}
-		@media (min-width: $screen-md-min) {
+		@media (min-width: $screen-xl-min) {
 			right: 78px;
+		}
+		@media (min-width: $screen-xxl-min) {
+			right: 150px;
 		}
 	}
 	.moving-content {
@@ -123,15 +123,14 @@ main {
 		position: fixed;
 		//left: 336px;
 		//left: 336px;
-		@media (min-width: $screen-lg-min) {
-			left: 130px;
-			top: 310px;
-		}
-		@media (min-width: $screen-md-min) {
+		@media (min-width: $screen-xl-min) {
 			left: 78px;
 			top: 290px;
 		}
-
+		@media (min-width: $screen-xxl-min) {
+			left: 130px;
+			top: 310px;
+		}
 		h2  {
 			//color: #fff8de;
 			padding: 10px 5px;
