@@ -103,18 +103,27 @@ main {
 	}
 	.panel {
 		position: fixed;
-		top: 21%;
-		width: 360px;
+		//top: 21%;
+		top: 17%;
+		width: 353px;
 		//left: 0;
 		//right: 0;
 		//margin: 0 auto;
-		border-radius: 15px;
+		background-color: transparent;
+		border: 0px;
+		padding: 30px 15px;
 		z-index: 200;
 		@media (min-width: $screen-xl-min) {
 			right: 78px;
 		}
 		@media (min-width: $screen-xxl-min) {
 			right: 150px;
+		}
+		.panel-body {
+			padding: 0px;
+			h1 {
+				color: white;
+			}
 		}
 	}
 	.moving-content {
@@ -128,8 +137,8 @@ main {
 			top: 290px;
 		}
 		@media (min-width: $screen-xxl-min) {
-			left: 130px;
-			top: 310px;
+			left: 150px;
+			top: 318px;
 		}
 		h2  {
 			//color: #fff8de;
@@ -154,9 +163,23 @@ main {
 	h1 {
 		font-size: 29px;
 	}
-	h2 {
-
-
+	form.new_blog {
+		width: 95%;
+    	margin: 0 auto;
+    	h1 {
+    		margin-bottom: 14px;
+    	}
+    	.form-group {
+    		margin-bottom: 8px;
+    	}
+    	.form-control {
+    		height: 49px;
+    		border-radius: 0px;
+    	}
+    	.btn-default {
+    	    margin-top: 5px;
+    	    width: 100%;
+    	}
 	}
 }
 
