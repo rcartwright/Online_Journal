@@ -110,10 +110,10 @@ main {
 		//margin: 0 auto;
 		border-radius: 15px;
 		z-index: 200;
-		@media (min-width: $screen-xl-min) {
+		@media (min-width: $screen-lg-min) {
 			right: 150px;
 		}
-		@media (min-width: $screen-lg-min) {
+		@media (min-width: $screen-md-min) {
 			right: 78px;
 		}
 	}
