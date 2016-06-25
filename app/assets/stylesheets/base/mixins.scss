@@ -1,28 +1,29 @@
 @mixin themify {
-    @each $theme, $c in $themes {
-        .page--#{$theme} {
-            $colors: $c !global;
+  @each $theme, $c in $themes {
+    .page--#{$theme} {
+      $colors: $c !global;
+        @content;
+      }
+      body.#{$theme} {
+        background-color:theme(base) !important;
+        color: $off-black;
+      }
 
-            @content;
-        }
-
-        body.#{$theme} {
-          background-color:theme(base) !important;
-          color: $off-black;
-}
-
-        .#{$theme} {
-          .navbar-default {
-            background-color: theme(dark);
-            border-color: transparent;
-            .navbar-brand, a {
-              color: theme(light_font) !important;
-            }
-          }
-          .sidebar-module-inset {
-            background-color: theme(light);
+      .#{$theme} {
+        .navbar-default {
+          background-color: theme(dark);
+          border-color: transparent;
+          .navbar-brand, a {
+            color: theme(light_font) !important;
           }
         }
+        .sidebar-module-inset {
+          background-color: theme(light);
+        }
+        footer {
+          background-color: theme(dark);
+        }
+      }
     }
 }
 
