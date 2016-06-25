@@ -1,6 +1,7 @@
 html {
     height: 100%;
 }
+
 body {
     min-height: 100%;
     height: 100% !important;
@@ -8,10 +9,12 @@ body {
     color: $off-black;
     margin-top: 50px;
 }
+
 .container {
     padding-right: 30px;
     padding-left: 30px;
 }
+
 .content {
     padding: 90px 40px;
     background-color: #fff;
@@ -20,12 +23,14 @@ body {
         padding: 50px 35px;
     }
 }
+
 .margin {
     padding-top: 130px;
     padding-left: 100px;
     padding-right: 100px;
     background-color: #fff;
 }
+
 .header-image {
     background-position: center bottom;
     background-color: #999;
@@ -56,6 +61,7 @@ body {
     }
 }
 
+
 /*
  * Globals
  */
@@ -64,43 +70,52 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     margin-top: 0;
     color: $off-black;
 }
+
 h1 {
     font-size: 55px;
     font-weight: 600;
     text-align: center;
 }
+
 h2 {
     margin-bottom: 5px;
     font-size: 40px;
     font-weight: 100;
 }
+
 h1, .h1, h2, .h2 {
     a {
         color: $off-black;
     }
 }
+
 .font-white {
     color: white;
 }
+
 p {
     font-weight: 300;
     color: #777;
     font-size: 25px;
     line-height: 37px;
 }
+
 a {
     font-weight: 600;
 }
+
 form {
     .actions {
         text-align: center;
     }
 }
+
 .btn-default {
     @extend .btn-primary;
     margin-top: 15px;
     text-align: center;
 }
+
 .josefin {
     body, p, h1, h2, span, .header-h1, .header-lead {
         font-family: 'Josefin Sans', sans-serif;
@@ -109,6 +124,7 @@ form {
         font-weight: 400;
     }
 }
+
 .nunito {
     body, p, h1, h2, span, .header-h1, .header-lead {
         font-family: 'Nunito', sans-serif;
@@ -117,6 +133,7 @@ form {
         font-weight: 100;
     }
 }
+
 .rachels-pick {
     h1, h2, span, .header-h1 {
         font-family: 'Nunito', sans-serif;
@@ -129,6 +146,7 @@ form {
         font-weight: 300;
     }
 }
+
 .nunito.extra-small-font, .josefin.extra-small-font, .rachels-pick.extra-small-font {
     .blog-post-text {
         p {
@@ -154,6 +172,7 @@ form {
         font-size: ($h2 - 4);
     }
 }
+
 .nunito.small-font, .josefin.small-font, .rachels-pick.small-font {
     .blog-post-text {
         p {
@@ -179,6 +198,7 @@ form {
         font-size: ($h2 - 2);
     }
 }
+
 .nunito.medium-font, .josefin.medium-font, .rachels-pick.medium-font {
     .blog-post-text {
         p {
@@ -204,6 +224,7 @@ form {
         font-size: $h2;
     }
 }
+
 .nunito.large-font, .josefin.large-font, .rachels-pick.large-font {
     .blog-post-text {
         p {
@@ -229,6 +250,7 @@ form {
         font-size: ($h2 + 4);
     }
 }
+
 .nunito.extra-large-font, .josefin.extra-large-font, .rachels-pick.extra-large-font {
     .blog-post-text {
         p {
@@ -254,9 +276,11 @@ form {
         font-size: ($h2 + 4);
     }
 }
+
 .navbar-brand {
     margin-left: 0 !important;
 }
+
 #flat_layout {
     .container {
         @media (min-width: $screen-xl-min) {
@@ -274,6 +298,7 @@ form {
         background-color: #FFF;
     }
 }
+
 #traditional {
     .content {
         padding: 60px;
@@ -290,16 +315,19 @@ form {
         text-align: left;
     }
 }
+
 #traditional.etc_content {
     h1 {
         text-align: center;
     }
 }
+
 .all_white {
     .navbar-brand {
         margin-left: -15px !important;
     }
 }
+
 #traditional.all_white {
     .navbar-content {
         padding-left: 60px;
@@ -309,15 +337,18 @@ form {
         padding: 23px;
     }
 }
+
 #flat_layout.all_white {
     .navbar-content {
         padding-left: 100px;
         padding-right: 100px;
     }
 }
+
 .navbar-brand {
     font-weight: 600;
 }
+
 
 /*
  * Masthead for nav
@@ -326,6 +357,7 @@ form {
 .navbar-default {
     background-color: $off-black;
 }
+
 
 /*
  * Main column and sidebar layout
@@ -336,12 +368,14 @@ form {
     line-height: 1.5;
 }
 
+
 /* Sidebar modules for boxing content */
 
 .sidebar-module {
     padding: 15px;
     margin: 0 -15px 15px;
 }
+
 .sidebar-module-inset {
     padding: 23px;
     border-radius: 4px;
@@ -353,18 +387,21 @@ form {
     }
 }
 
+
 /* Pagination */
 
 .pager {
     margin-bottom: 60px;
     text-align: left;
 }
+
 .pager > li > a {
     width: 140px;
     padding: 10px 20px;
     text-align: center;
     border-radius: 30px;
 }
+
 
 /*
  * Blog posts
@@ -373,6 +410,7 @@ form {
 .blog-header {
     padding-bottom: 30px;
 }
+
 .blog-post {
     margin-bottom: 30px;
     h2 {
@@ -398,14 +436,17 @@ form {
         }
     }
 }
+
 .blog-post-meta {
     color: #666;
 }
+
 .form-container {
     max-width: 550px;
     margin: 0px auto;
     padding: 35px 0;
 }
+
 .alert {
     position: absolute;
     top: 62px;
@@ -419,6 +460,7 @@ form {
     right: 0;
 }
 
+
 /*
  * Footer
  */
@@ -430,9 +472,11 @@ form {
     background-color: #f9f9f9;
     border-top: 1px solid #e5e5e5;
 }
+
 .blog-footer p:last-child {
     margin-bottom: 0;
 }
+
 .img-thumbnail {
     float: right;
     overflow: hidden;
@@ -446,9 +490,11 @@ form {
     margin-right: 15px;
     margin-top: -15px;
 }
+
 .img-circle {
     width: 50%;
 }
+
 .img-avatar {
     bottom: 0px;
     width: 96px;
@@ -460,25 +506,31 @@ form {
     position: relative;
     cursor: pointer;
 }
+
 .header-img {
     height: 440px !important;
 }
+
 .navbar {
     min-height: 0px;
 }
+
 .blog-sidebar {
     width: 30%;
     float: right;
 }
+
 .sidebar-title {
     display: block;
     padding-bottom: 10px;
 }
+
 .sidebar-content {
     font-weight: 400;
     color: #777;
     padding-right: 5px;
 }
+
 footer {
     width: 100%;
     height: 100px;
