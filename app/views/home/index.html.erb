@@ -1,107 +1,47 @@
 <main>
     <section id="slide-1" class="slide">
-<div class="tint"></div>
-
-    	<div class="slide-background" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
-
-
-    		    		<div class="panel panel-default">
-	 <div class="panel-body">
-      <h1>Sign Up Here</h1>
-
-<%= bootstrap_form_for(@blog) do |f| %>
-  <% if @blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
-      <ul>
-      <% @blog.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= f.text_field :blog_name, hide_label: true, placeholder: "Blog Name" %>
-  <% if params[:action] == "edit" %>
-  <%= f.text_field :status %>
-  <% end %>
-  <%= f.fields_for :user do |q| %>
-    <%= q.text_field :name, hide_label: true, placeholder: "Full Name" %>
-    <%= q.text_field :email, hide_label: true, placeholder: "Your Email" %>
-    <% if params[:action] == "edit" %>
-      <%= q.file_field :avatar %>
-    <% end %>
-      <% if params[:action] == "index" %>
-     <%= q.password_field :password, hide_label: true, placeholder: "Password" %>
-    <%= q.password_field :password_confirmation, hide_label: true, placeholder: "Confirm Password" %>
-  <% end %>
-  <% end %>
-<div class="actions">
-  <%= f.submit %>
-</div>
-<% end %>
-
-</div>
-</div>
-
-
-    		    <!--		<div class="panel panel-default">
-	 <div class="panel-body">
-	 	<h1>Sign Up Here</h1>
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-</div>
-</div>-->
-
-
-
-
-			<div class="content-container">
-	    	<!--	<div class="moving-content" data-center-top="left: -200px; opacity: 1" data-center="left: 400px; opacity: 1" data--100-bottom="opacity: 0" data-anchor-target="#slide-1">-->
-
-		    		  <div class="moving-content">
-            <h2>Publish your thoughts...</h2>
+        <div class="tint"></div>
+        <div class="slide-background" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1>Sign Up Here</h1>
+                    <%= bootstrap_form_for(@blog) do |f| %>
+                    <% if @blog.errors.any? %>
+                    <div id="error_explanation">
+                        <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+                        <ul>
+                            <% @blog.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                    <% end %>
+                    <%= f.text_field :blog_name, hide_label: true, placeholder: "Blog Name" %>
+                    <% if params[:action] == "edit" %>
+                    <%= f.text_field :status %>
+                    <% end %>
+                    <%= f.fields_for :user do |q| %>
+                    <%= q.text_field :name, hide_label: true, placeholder: "Full Name" %>
+                    <%= q.text_field :email, hide_label: true, placeholder: "Your Email" %>
+                    <% if params[:action] == "edit" %>
+                    <%= q.file_field :avatar %>
+                    <% end %>
+                    <% if params[:action] == "index" %>
+                    <%= q.password_field :password, hide_label: true, placeholder: "Password" %>
+                    <%= q.password_field :password_confirmation, hide_label: true, placeholder: "Confirm Password" %>
+                    <% end %>
+                    <% end %>
+                    <div class="actions">
+                        <%= f.submit %>
+                    </div>
+                    <% end %>
+                </div>
             </div>
-	    		<!--</div>-->
-        	</div>
-    	</div>
+            <div class="content-container">
+                <div class="moving-content">
+                    <h2>Publish your thoughts...</h2>
+                </div>
+            </div>
+        </div>
     </section>
-<!--
-	<section id="slide-2" class="slide">
-		<div class="slide-background" data-center="background-position: 50% 10px;" data-top-bottom="background-position: 50% -100px;" data-bottom-top="background-position: 50% 100px;" data-anchor-target="#slide-2">
-	    	<div class="content-container">
-	    		<div class="moving-content" data-center="opacity: 1" data-center-top="opacity: 0" data--100-bottom="opacity: 0;" data-anchor-target="#slide-2">
-		    		<h2>Or... blog about flowers</h2>
-	    		</div>
-	    	</div>
-		</div>
-	</section>
-
-	<section id="slide-3" class="slide">
-		<div class="slide-background" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-bottom-top="background-position: 50% 100px;" data-anchor-target="#slide-3">
-	    	<div class="content-container">
-				<div class="moving-content" data--50-bottom="opacity: 0;" data--200-bottom="opacity: 1;" data-center="opacity: 1" data-200-top="opacity: 0" data-anchor-target="#slide-3">
-		    		<h2>Or maybe about the mountains...</h2>
-	    		</div>
-	    	</div>
-	    </div>
-	</section>-->
-
-
-
 </main>

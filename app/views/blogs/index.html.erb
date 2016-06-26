@@ -1,18 +1,13 @@
-<% content_for(:title, 'Home')%>
+<% content_for(:title, 'Blogs')%>
 <h1><%= yield :title %></h1>
-
 <p><%= link_to 'New Blog', new_blog_path %></p>
-
-    <% @blogs.each do |blog| %>
-
+<% @blogs.each do |blog| %>
 <div class="panel panel-default">
-  <div class="panel-body">
-
-        <%= blog.blog_name %><br>
-        <%= link_to 'Show', blog %>
-        <%= link_to 'Edit', edit_blog_path(blog) %>
-        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-  </div>
+	<div class="panel-body">
+		<%= blog.blog_name %><br>
+		<%= link_to 'Show', blog %>
+		<%= link_to 'Edit', edit_blog_path(blog) %>
+		<%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+	</div>
 </div>
-
-    <% end %>
+<% end %>
