@@ -7,7 +7,7 @@ module ApplicationHelper
 
 	def layout
   		if params[:blog_id].present? || params[:id].present?
-  	  		if defined?(@style.color_theme)
+  	  		if defined?(@style.layout)
       			@style.layout
 			else
 				"flat_layout"
@@ -24,10 +24,12 @@ module ApplicationHelper
   			if defined?(@style.color_theme)
       			@style.color_theme
 			else
-				'blue-theme'
+				'blue_theme'
 			end
-		else
+		elsif params[:controller] == "home"
 			'none'
+		else
+			'earthy_theme'
 		end
 	end
 
@@ -51,7 +53,7 @@ module ApplicationHelper
 		if params[:action] != "index" and params[:action] != "show"
 			'etc_content'
 		else
-			''
+			'not_etc_content'
 		end
 	end
 

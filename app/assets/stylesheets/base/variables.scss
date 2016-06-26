@@ -49,5 +49,11 @@ $themes:
         ( base: #9DBDC6,
           light: lighten(#9DBDC6, 20%),
           dark: #547179,
-          light_font: #E4F9FF)
+          light_font: #E4F9FF),
+
+      earthy_theme:
+        ( base: #eee,
+          light: lighten(#444, 7%),
+          dark: #444,
+          light_font: #fff)
     );

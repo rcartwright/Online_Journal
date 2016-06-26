@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= full_title(yield :title) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
-  <%= csrf_meta_tags %>
-<link href='https://fonts.googleapis.com/css?family=Roboto|Cabin|Nunito:300,400,700|Josefin+Sans:400,700,600,300,100|Signika|Cuprum' rel='stylesheet' type='text/css'>
-</head>
-
-<body data-no-turbolink id="<%= layout %>" class="<%= etc_page %> <%= color %> <%= font_family %> <%= font_size %>">
-    <% if flash[:error] -%>
+	<head>
+		<title><%= full_title(yield :title) %></title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+		<%= csrf_meta_tags %>
+		<link href='https://fonts.googleapis.com/css?family=Roboto|Cabin|Nunito:300,400,700|Josefin+Sans:400,700,600,300,100|Signika|Cuprum' rel='stylesheet' type='text/css'>
+	</head>
+	<body data-no-turbolink id="<%= layout %>" class="<%= etc_page %> <%= color %> <%= font_family %> <%= font_size %>">
+		<% if flash[:error] -%>
 		<div class="alert alert-danger" role="alert">
 			<%=h flash[:error] %>
 		</div>
-	<% end -%>
-	<% if flash[:notice] -%>
+		<% end -%>
+		<% if flash[:notice] -%>
 		<div class="alert alert-success" role="alert">
 			<%=h flash[:notice] %>
 		</div>
-	<% end -%>
-
-	<%= yield %>
-
-	<footer>
-		<a href="/">Home</a> / <a href="./login">Login</a>
-		<p>
-			&copy; Online Journal 2015-2016 - Created by 
-			<a href="http://www.racheldcartwright.com">Rachel D. Cartwright</a>
-		</p>
-	</footer>
-
-  <%= debug(params) if Rails.env.development? %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-</body>
+		<% end -%>
+		<%= yield %>
+		<footer>
+			<a href="/">Home</a> / <a href="./login">Login</a>
+			<p>
+				&copy; Online Journal 2015-2016 - Created by
+				<a href="http://www.racheldcartwright.com">Rachel D. Cartwright</a>
+			</p>
+		</footer>
+		<%= debug(params) if Rails.env.development? %>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	</body>
 </html>
