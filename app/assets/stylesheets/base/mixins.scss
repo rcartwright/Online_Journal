@@ -5,22 +5,28 @@
             @content;
         }
         body.#{$theme} {
-            background-color: theme(base) !important;
+            background-color: theme(page_background) !important;
             color: $off-black;
         }
         .#{$theme} {
             .navbar-default {
-                background-color: theme(dark);
+                background-color: theme(navbar);
                 border-color: transparent;
                 .navbar-brand, a {
-                    color: theme(light_font) !important;
+                    color: theme(navbar_text) !important;
                 }
             }
             .sidebar-module-inset {
-                background-color: theme(light);
+                background-color: theme(sidebar);
+                .sidebar-title {
+                    color: theme(sidebar_title);
+                }
+                .sidebar-content {
+                    color: theme(sidebar_text);
+                }
             }
             footer {
-                background-color: theme(dark);
+                background-color: theme(navbar);
             }
         }
     }

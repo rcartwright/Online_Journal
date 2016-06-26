@@ -22,38 +22,56 @@ $screen-xs-max: 479px;
 
 $themes:
     ( blue_theme:
-        ( base: lightblue,
-          light: lighten(lightblue, 10%),
-          dark: darken(lightblue, 35%),
-          light_font: #E4F9FF),
+        ( page_background: lightblue,
+          main_text: #777,
+          sidebar: lighten(lightblue, 10%),
+          sidebar_title: #444,
+          sidebar_text: #777,
+          navbar: darken(lightblue, 35%),
+          navbar_text: #E4F9FF,),
 
       grey_theme:
-        ( base: #ddd,
-          light: lighten(#ddd, 7%),
-          dark: darken(#eee, 50%),
-          light_font: #E4F9FF),
+        ( page_background: #ddd,
+          main_text: #777,
+          sidebar: lighten(#ddd, 7%),
+          sidebar_title: #444,
+          sidebar_text: darken(#eee, 50%),
+          navbar: darken(#eee, 50%),
+          navbar_text: #E4F9FF),
 
       red_theme:
-        ( base: #A72A2A,
-          light: lighten(#A72A2A, 15%),
-          dark: darken(#eee, 50%),
-          light_font: #E4F9FF),
+        ( page_background: #A72A2A,
+          main_text: #777,
+          sidebar: lighten(#A72A2A, 15%),
+          sidebar_title: #fff,
+          sidebar_text: #fff,
+          navbar: darken(#eee, 50%),
+          navbar_text: #E4F9FF),
 
       all_white:
-        ( base: #fff,
-          light: #fff,
-          dark: #fff,
-          light_font: $off-black),
+        ( page_background: #fff,
+          main_text: #777,
+          sidebar: #fff,
+          sidebar_title: #444,
+          sidebar_text: #777,
+          navbar: #fff,
+          navbar_text: $off-black),
 
       periwinkle:
-        ( base: #9DBDC6,
-          light: lighten(#9DBDC6, 20%),
-          dark: #547179,
-          light_font: #E4F9FF),
+        ( page_background: #9DBDC6,
+          main_text: #777,
+          sidebar: lighten(#9DBDC6, 20%),
+          sidebar_title: #444,
+          sidebar_text: #fff,
+          navbar: #547179,
+          navbar_text: #E4F9FF),
 
       earthy_theme:
-        ( base: #eee,
-          light: lighten(#444, 7%),
-          dark: #444,
-          light_font: #fff)
+        ( page_background: #eee,
+          main_text: #777,
+          sidebar: lighten(#444, 7%),
+          sidebar_title: #444,
+          sidebar_text: #fff,
+          navbar: #444,
+          navbar_text: #fff)
     );
