@@ -1,4 +1,3 @@
-$off-black: #444;
 $colors:null;
 $p-base-font: 20px;
 $p-line-height: floor($p-base-font*1.3);
@@ -20,58 +19,75 @@ $screen-md-min: 768px;
 $screen-sm-min: 480px;
 $screen-xs-max: 479px;
 
+$off-black: #444;
+
+$red_dark: #A72A2A;
+$red_light: lighten($red_dark, 15%);
+
+$blue_light: lightblue;
+$blue_lighter: lighten($blue_light, 10%);
+$blue_dark: darken($blue_light, 35%);
+
+$gray_light: #ddd;
+$gray_lighter: lighten($gray_light, 7%);
+$gray_dark: #6f6f6f;
+
+$gray_font: #777;
+$gray_font_light: #eee;
+
+
 $themes:
     ( blue_theme:
-        ( page_background: lightblue,
-          main_text: #777,
-          sidebar: lighten(lightblue, 10%),
-          sidebar_title: #444,
-          sidebar_text: #777,
-          navbar: darken(lightblue, 35%),
-          navbar_text: #E4F9FF,),
+        ( page_background: $blue_light,
+          main_text: $gray_font,
+          sidebar: $blue_lighter,
+          sidebar_title: $off-black,
+          sidebar_text: $gray_font,
+          navbar: $blue_dark,
+          navbar_text: #E4F9FF),
 
       grey_theme:
         ( page_background: #ddd,
-          main_text: #777,
+          main_text: $gray_font,
           sidebar: lighten(#ddd, 7%),
-          sidebar_title: #444,
-          sidebar_text: darken(#eee, 50%),
-          navbar: darken(#eee, 50%),
-          navbar_text: #E4F9FF),
+          sidebar_title: $off-black,
+          sidebar_text: $gray_dark,
+          navbar: $gray_dark,
+          navbar_text: $gray_font_light),
 
       red_theme:
-        ( page_background: #A72A2A,
-          main_text: #777,
-          sidebar: lighten(#A72A2A, 15%),
+        ( page_background: $red_dark,
+          main_text: $gray_font,
+          sidebar: $red_light,
           sidebar_title: #fff,
           sidebar_text: #fff,
-          navbar: darken(#eee, 50%),
-          navbar_text: #E4F9FF),
+          navbar: $gray_dark,
+          navbar_text: $gray_font_light),
 
       all_white:
         ( page_background: #fff,
-          main_text: #777,
+          main_text: $gray_font,
           sidebar: #fff,
-          sidebar_title: #444,
-          sidebar_text: #777,
+          sidebar_title: $off-black,
+          sidebar_text: $gray_font,
           navbar: #fff,
           navbar_text: $off-black),
 
       periwinkle:
         ( page_background: #9DBDC6,
-          main_text: #777,
+          main_text: $gray_font,
           sidebar: lighten(#9DBDC6, 20%),
-          sidebar_title: #444,
+          sidebar_title: $off-black,
           sidebar_text: #fff,
           navbar: #547179,
-          navbar_text: #E4F9FF),
+          navbar_text: $gray_font_light),
 
       earthy_theme:
-        ( page_background: #eee,
-          main_text: #777,
-          sidebar: lighten(#444, 7%),
-          sidebar_title: #444,
+        ( page_background: $gray_font_light,
+          main_text: $gray_font,
+          sidebar: lighten($off-black, 7%),
+          sidebar_title: $off-black,
           sidebar_text: #fff,
-          navbar: #444,
+          navbar: $off-black,
           navbar_text: #fff)
     );
