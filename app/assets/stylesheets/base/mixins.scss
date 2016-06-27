@@ -26,7 +26,8 @@
                 }
             }
             footer {
-                background-color: theme(navbar);
+                background-color: theme(footer);
+                color: theme(footer_text);
             }
         }
     }
