@@ -27,7 +27,7 @@ module ApplicationHelper
 				'blue_theme'
 			end
 		elsif params[:controller] == "home"
-			'none'
+			'all_white'
 		else
 			'earthy_theme'
 		end
