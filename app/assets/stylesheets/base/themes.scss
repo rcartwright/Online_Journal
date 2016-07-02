@@ -54,23 +54,23 @@
     background-color: $red_dark !important;
     color: $gray_font !important;
     .navbar-default {
-        background-color: $gray_dark;
+        background-color: #455a64;
         border-color: transparent;
         .navbar-brand, a {
             color: $gray_font_light !important;
         }
     }
     .sidebar-module-inset {
-        background-color: $red_light;
+        background-color: #fff;
         .sidebar-title {
-            color: #fff;
+            color: $off-black;
         }
         .sidebar-content {
-            color: #fff;
+            color: $gray_font;
         }
     }
     footer {
-        background-color: $gray_dark;
+        background-color: #455a64;
         color: $gray_font_light;
     }
 }
@@ -145,7 +145,7 @@
         }
     }
     .sidebar-module-inset {
-        background-color: lighten($off-black, 7%);
+        background-color: #fff;
         .sidebar-title {
             color: #fff;
         }
@@ -158,3 +158,29 @@
         color: #fff;
     }
 }
+
+.sky_blue {
+    background-color: #fff !important;
+    color: $gray_font !important;
+    .navbar-default {
+        background-color: #03A9F4;
+        border-color: transparent;
+        .navbar-brand, a {
+            color: #fff !important;
+        }
+    }
+    .sidebar-module-inset {
+        background-color: #fff;
+        .sidebar-title {
+            color: $off-black;
+        }
+        .sidebar-content {
+            color: $gray_font;
+        }
+    }
+    footer {
+        background-color: #03A9F4;
+        color: #fff;
+    }
+}
+
