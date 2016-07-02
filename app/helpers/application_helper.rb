@@ -24,7 +24,7 @@ module ApplicationHelper
   			if defined?(@style.color_theme)
       			@style.color_theme
 			else
-				'blue_theme'
+				'sky_blue'
 			end
 		elsif params[:controller] == "home"
 			'all_white'
