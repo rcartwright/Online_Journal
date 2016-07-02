@@ -1,4 +1,14 @@
     <nav class="navbar navbar-default navbar-fixed-top">
+        <% if flash[:error] -%>
+    <div class="alert alert-danger" role="alert">
+      <%=h flash[:error] %>
+    </div>
+    <% end -%>
+    <% if flash[:notice] -%>
+    <div class="alert alert-success" role="alert">
+      <%=h flash[:notice] %>
+    </div>
+    <% end -%>
       <div class="container">
         <div class="navbar-content">
         <div class="navbar-header">
