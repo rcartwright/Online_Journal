@@ -18,18 +18,22 @@
           <%= link_to base_title, blog_path(@blog), class: "navbar-brand" %>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Home", blog_path(@blog) %></li>
-            <% if logged_in? %>
-            <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-             <li><%= link_to 'New Post', new_blog_post_path(@current_user.blog) %></li>
-             <li><%= link_to 'Edit Style', edit_blog_style_path(@current_user.blog, @style) %></li>
-             <li><%= link_to 'Edit Blog', edit_blog_path(@current_user.blog) %></li>
-             <!--<li><#%= link_to 'Change Password', edit_password_path(@current_user.blog) %#></li>-->
-            <% else %>
-            <!--<li><#%= link_to "Log in", login_path %#></li>-->
-            <% end %>
-          </ul>
+          	<ul class="nav navbar-nav">
+            	<li><%= link_to "Home", blog_path(@blog) %></li>
+          	</ul>
+          	<% if logged_in? %>
+          		<ul class="nav navbar-right">
+            		<% if @blog == @current_user.blog %>
+             			<li><%= link_to 'New Post', new_blog_post_path(@current_user.blog) %></li>
+             			<li><%= link_to 'Edit Style', edit_blog_style_path(@current_user.blog, @style) %></li>
+            			<li><%= link_to 'Edit Blog', edit_blog_path(@current_user.blog) %></li>
+            			<li><%= link_to "Log out", logout_path, method: "delete" %></li>
+            		<% else %>
+             			<!--<li><#%= link_to 'Change Password', edit_password_path(@current_user.blog) %#></li>-->
+            			<li><%= link_to 'Back To Your Blog', blog_path(@current_user.blog) %></li>
+            		<% end %>
+          		</ul>
+          	<% end %>
         </div><!--/.nav-collapse -->
       </div>
     </div>

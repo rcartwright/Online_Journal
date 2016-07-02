@@ -511,6 +511,17 @@ form {
     min-height: 0px;
 }
 
+.nav {
+    li {
+        display: inline-block;
+    }
+    a {
+        line-height: 20px;
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+    }
+}
+
 .blog-sidebar {
     width: 30%;
     float: right;
