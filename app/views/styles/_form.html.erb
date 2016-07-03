@@ -12,17 +12,17 @@
     </div>
   <% end %>
 
-<%= f.select :layout, [["traditional", "traditional"], ["flat_layout", "flat_layout"]], { label: "Layout:" } %>
+<%= f.select :layout, [["Traditional", "traditional"], ["Flat", "flat_layout"]], { label: "Layout:" } %>
 
 
     <%= f.text_field :header_image %>
 
 
-<%= f.select :color_theme, [["blue_theme", "blue_theme"], ["grey_theme", "grey_theme"], ["red_theme", "red_theme"], ["all_white", "all_white"], ["periwinkle", "periwinkle"], ["sky_blue", "sky_blue"], ["all_white", "all_white"]], { label: "Color Theme:" } %>
+<%= f.select :color_theme, [["Blue Theme", "blue_theme"], ["Gray Theme", "grey_theme"], ["Red Theme", "red_theme"], ["All White", "all_white"], ["Periwinkle", "periwinkle"], ["Sky Blue", "sky_blue"], ["Earthy Theme", "earthy_theme"]], { label: "Color Theme:" } %>
 
 <%= f.select :font_family, [["Nunito", "nunito"], ["Josefin", "josefin"], ["Rachels Pick", "rachels-pick"]], { label: "Font Family:" } %>
 
-<%= f.select :font_size, [["extra-small-font", "extra-small-font"], ["small-font", "small-font"], ["medium-font", "medium-font"], ["large-font", "large-font"], ["extra-large-font", "extra-large-font"]], { label: "Font Size:" } %>
+<%= f.select :font_size, [["extra small", "extra-small-font"], ["small", "small-font"], ["medium", "medium-font"], ["large", "large-font"], ["extra large", "extra-large-font"]], { label: "Font Size:" } %>
 
 
   <div class="actions">
