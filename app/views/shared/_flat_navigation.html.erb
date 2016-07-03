@@ -1,56 +1,54 @@
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <% if flash[:error] -%>
-    <div class="alert alert-danger" role="alert">
-      <%=h flash[:error] %>
-    </div>
-    <% end -%>
-    <% if flash[:notice] -%>
-    <div class="alert alert-success" role="alert">
-      <%=h flash[:notice] %>
-    </div>
-    <% end -%>
-      <div class="container">
-        <div class="navbar-content">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-          </button>
-          <%= link_to base_title, blog_path(@blog), class: "navbar-brand" %>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          	<ul class="nav navbar-nav">
-            	<li><%= link_to "Home", blog_path(@blog) %></li>
-          	</ul>
-          	<% if logged_in? %>
-          		<ul class="nav navbar-right">
-            		<% if @blog == @current_user.blog %>
-             			<li><%= link_to 'New Post', new_blog_post_path(@current_user.blog) %></li>
-             			<li><%= link_to 'Edit Style', edit_blog_style_path(@current_user.blog, @style) %></li>
-            			<li><%= link_to 'Edit Blog', edit_blog_path(@current_user.blog) %></li>
-            			<li><%= link_to "Log out", logout_path, method: "delete" %></li>
-            		<% else %>
-             			<!--<li><#%= link_to 'Change Password', edit_password_path(@current_user.blog) %#></li>-->
-            			<li><%= link_to 'Back To Your Blog', blog_path(@current_user.blog) %></li>
-            		<% end %>
-          		</ul>
-          	<% end %>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-    </nav>
-
-<% if header_image? %>
-<% if @header_image_on == true %>
-
-<div class="header-image" style="background-image:url(<%= header_image %>)">
-  <div class="header-image-text">
-    <div class="text-center header-h1">
-      <%= @blog.blog_name %>
-    </div>
-    <div class="header-lead text-center">
-      <%= @blog.status %>
-    </div>
-  </div>
-</div>
-<% end %>
-<% end %>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<% if flash[:error] -%>
+	<div class="alert alert-danger" role="alert">
+		<%=h flash[:error] %>
+	</div>
+	<% end -%>
+	<% if flash[:notice] -%>
+	<div class="alert alert-success" role="alert">
+		<%=h flash[:notice] %>
+	</div>
+	<% end -%>
+	<div class="container">
+		<div class="navbar-content">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				</button>
+				<%= link_to base_title, blog_path(@blog), class: "navbar-brand" %>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><%= link_to "Home", blog_path(@blog) %></li>
+				</ul>
+				<% if logged_in? %>
+				<ul class="nav navbar-right">
+					<% if @blog == @current_user.blog %>
+					<li><%= link_to 'New Post', new_blog_post_path(@current_user.blog) %></li>
+					<li><%= link_to 'Edit Style', edit_blog_style_path(@current_user.blog, @style) %></li>
+					<li><%= link_to 'Edit Blog', edit_blog_path(@current_user.blog) %></li>
+					<li><%= link_to "Log out", logout_path, method: "delete" %></li>
+					<% else %>
+					<!--<li><#%= link_to 'Change Password', edit_password_path(@current_user.blog) %#></li>-->
+					<li><%= link_to 'Back To Your Blog', blog_path(@current_user.blog) %></li>
+					<% end %>
+				</ul>
+				<% end %>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</nav>
+	<% if header_image? %>
+	<% if @header_image_on == true %>
+	<div class="header-image" style="background-image:url(<%= header_image %>)">
+		<div class="header-image-text">
+			<div class="text-center header-h1">
+				<%= @blog.blog_name %>
+			</div>
+			<div class="header-lead text-center">
+				<%= @blog.status %>
+			</div>
+		</div>
+	</div>
+	<% end %>
+	<% end %>
