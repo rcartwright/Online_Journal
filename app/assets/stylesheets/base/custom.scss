@@ -117,7 +117,7 @@ form {
 }
 
 .josefin {
-    body, p, h1, h2, span, .header-h1, .header-lead {
+    body, p, h1, h2, span, .blog-post-text, .header-h1, .header-lead {
         font-family: 'Josefin Sans', sans-serif;
     }
     span, p {
@@ -126,7 +126,7 @@ form {
 }
 
 .nunito {
-    body, p, h1, h2, span, .header-h1, .header-lead {
+    body, p, h1, h2, span, .blog-post-text, .header-h1, .header-lead {
         font-family: 'Nunito', sans-serif;
     }
     span, p {
@@ -138,7 +138,7 @@ form {
     h1, h2, span, .header-h1 {
         font-family: 'Nunito', sans-serif;
     }
-    body, p, span, .header-lead {
+    body, p, span, .blog-post-text, .header-lead {
         font-family: 'Josefin Sans', sans-serif;
     }
     span, p {
