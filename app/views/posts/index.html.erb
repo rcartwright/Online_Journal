@@ -1,7 +1,8 @@
 <% content_for(:title, "Blog Posts") %>
 <%= hide_if_header_image(blog_post_header) %>
 
-<%= render :partial => @posts %>
+
+<%= render(:partial => 'post', :collection => @posts) || 'There are currently no posts to this blog yet.' %>
 
 <nav>
   <ul class="pager">

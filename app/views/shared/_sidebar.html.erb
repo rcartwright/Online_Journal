@@ -1,14 +1,6 @@
 <div class="col-sm-4 blog-sidebar">
     <div class="sidebar-module sidebar-module-inset">
         <div class="blog-post-text">
-            <!-- <p class="text-center">
-                <strong>Name:</strong>
-                <strong><%= @user.name %></strong>
-            </p>-->
-            <!--<p>
-                <strong>Email:</strong>
-                <%= @user.email %>
-            </p>-->
             <span class="sidebar-title"><strong>About <%= @user.name %>:</strong></span>
             <div class="image-container">
                 <% if @user.avatar? %>
@@ -17,7 +9,7 @@
                     </div>
                 </div>
                 <% end %>
-                <span class="sidebar-content"><%= @blog.about || "" %></span>
+                <span class="sidebar-content"><%= @blog.about || "This user has currently has no bio." %></span>
             </div>
         </div>
         <div class="sidebar-module">
@@ -28,13 +20,5 @@
                 <% end %>
             </ol>
         </div>
-        <!--<div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-                <li><a href="#">GitHub</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Facebook</a></li>
-            </ol>
-        </div>-->
-        </div><!-- /.blog-sidebar -->
-        </div>
+    </div>
+</div>
