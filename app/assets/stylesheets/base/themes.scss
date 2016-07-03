@@ -145,12 +145,12 @@
         }
     }
     .sidebar-module-inset {
-        background-color: #fff;
+        background-color: $gray_font_light;
         .sidebar-title {
-            color: #fff;
+            color: $off-black;
         }
         .sidebar-content {
-            color: #fff;
+            color: $gray_font;
         }
     }
     footer {
