@@ -1,18 +1,21 @@
 <div class="blog-post">
-  <% if @blog.posts.exists? %>
-      <h2><%= link_to post.title, blog_post_path(@blog, post) %></h2>
-      <div class="blog-post-text">
-        <p class="blog-post-date">
-          Written on <%= post.created_at.strftime("%B %d, %Y") %> by <a href="#"><%= @user.name %></a>
-        </p>
-      </div>
-      <div class="blog-post-text">
-        <%=raw post.body %>
-      </div>
-      <%= link_to 'Edit', edit_blog_post_path(@blog, post) %> |
-      <%= link_to 'Delete', blog_post_path(@blog, post), method: :delete, data: { confirm: 'Are you sure?' } %>
-
-  <% else %>
-    This blog currently has no blog posts. Check back again soon!
-  <% end %>
+	<% if @blog.posts.each do |post| %>
+	<h2><%= link_to post.title, blog_post_path(@blog, post) %></h2>
+	<div class="blog-post-text">
+		<p class="blog-post-date">
+			Written on <%= post.created_at.strftime("%B %d, %Y") %> by <a href="#"><%= @user.name %></a>
+		</p>
+	</div>
+	<div class="blog-post-text">
+		<%=raw post.body %>
+	</div>
+	<%= link_to 'Edit', edit_blog_post_path(@blog, post) %> |
+	<%= link_to 'Delete', blog_post_path(@blog, post), method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end.empty? %>
+	<div class="blog-post-text">
+		<p>
+			This blog currently has no blog posts. Check back again soon!
+		</p>
+	</div>
+	<% end %>
 </div>
