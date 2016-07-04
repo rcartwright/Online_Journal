@@ -9,16 +9,24 @@
                     </div>
                 </div>
                 <% end %>
-                <span class="sidebar-content"><%= @blog.about || "This user has currently has no bio." %></span>
+                <span class="sidebar-content">
+                    <% if @blog.about? %>
+                        <%= @blog.about %>
+                    <% else %>
+                        <i>This user has currently has no bio.</i>
+                    <% end %>
+                </span>
             </div>
         </div>
-        <div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-                <% @post_months.sort.reverse.each do |month, posts| %>
-                <li><%= link_to month.strftime("%B %Y"), month_index_path(@blog, month.strftime("%m"), month.strftime("%Y")) %></li>
-                <% end %>
-            </ol>
-        </div>
+        <% if @posts.exists? %>
+            <div class="sidebar-module">
+                <h4>Archives</h4>
+                <ol class="list-unstyled">
+                    <% @post_months.sort.reverse.each do |month, posts| %>
+                    <li><%= link_to month.strftime("%B %Y"), month_index_path(@blog, month.strftime("%m"), month.strftime("%Y")) %></li>
+                    <% end %>
+                </ol>
+            </div>
+        <% end %>
     </div>
 </div>
