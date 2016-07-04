@@ -120,7 +120,7 @@ form {
     body, p, h1, h2, span, .blog-post-text, .header-h1, .header-lead {
         font-family: 'Josefin Sans', sans-serif;
     }
-    span, p {
+    span, p, .blog-post-text {
         font-weight: 400;
     }
 }
@@ -129,7 +129,7 @@ form {
     body, p, h1, h2, span, .blog-post-text, .header-h1, .header-lead {
         font-family: 'Nunito', sans-serif;
     }
-    span, p {
+    span, p, .blog-post-text {
         font-weight: 100;
     }
 }
@@ -141,7 +141,7 @@ form {
     body, p, span, .blog-post-text, .header-lead {
         font-family: 'Josefin Sans', sans-serif;
     }
-    span, p {
+    span, p, .blog-post-text {
         //font-weight: 400;
         font-weight: 300;
     }
