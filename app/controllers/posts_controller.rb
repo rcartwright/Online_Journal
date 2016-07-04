@@ -5,8 +5,8 @@ class PostsController < ApplicationController
   before_action :set_post_comments, only: [:show]
   before_action :set_post_months
   before_action :header_image_on, only: [:index, :show]
-  before_filter :signed_in_user, except: [:index, :show]
-  before_action :correct_user, except: [:index, :show]
+  before_filter :signed_in_user, except: [:month, :index, :show]
+  before_action :correct_user, except: [:month, :index, :show]
   protect_from_forgery :secret => 'secret_number',
                        :except => [:show, :index]
   before_action :set_layout
