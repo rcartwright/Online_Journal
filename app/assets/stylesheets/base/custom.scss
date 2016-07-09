@@ -279,6 +279,11 @@ form {
 
 .navbar-brand {
     margin-left: 0 !important;
+    font-family: 'Dosis', sans-serif;
+    font-size: 29px !important;
+    line-height: 27px !important;
+    font-weight: 700 !important;
+    color: #555 !important;
 }
 
 #flat_layout {
@@ -348,17 +353,12 @@ form {
     }
 }
 
-.navbar-brand {
-    font-weight: 600;
-}
-
-
 /*
  * Masthead for nav
  */
 
 .navbar-default {
-    background-color: $off-black;
+    background-color: #555;
 }
 
 

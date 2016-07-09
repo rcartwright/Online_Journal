@@ -85,7 +85,7 @@ module ApplicationHelper
 	  	if params[:blog_id].present? || params[:id].present?
 	    	@blog.blog_name
 		else
-			"Uttify"
+			"Writela"
 		end
 	end
 
